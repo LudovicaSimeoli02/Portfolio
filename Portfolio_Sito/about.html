@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About me - Ludovica Simeoli</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="about.js" defer></script>
+</head>
+<body>
+  <div class="cork-board-bg"></div>
+  <aside class="sidebar">
+    <img src="risorse/LS.png" alt="LS" class="LS-logo" />
+    <nav>
+      <a href="index1.html">Home</a>
+      <a href="about.html" class="active">About me</a>
+      <a href="works.html">Portfolio</a>
+    </nav>
+  </aside>
+  <div class="about-title-handwritten">About Me</div>
+  <main class="main-content">
+    <div class="about-grid">
+      <div class="about-col-formazione-esperienza" style="flex-direction: row; align-items: flex-start; gap: 1.2rem;">
+        <div class="about-tabs">
+          <button class="about-tab-btn active" data-tab="formazione">Formazione</button>
+          <button class="about-tab-btn" data-tab="esperienza">Esperienza</button>
+          <button class="about-tab-btn" data-tab="interessi">Interessi</button>
+          <button class="about-tab-btn" data-tab="contatti">Contatti</button>
+        </div>
+        <div class="about-tab-content-card">
+          <div class="about-tab-content" data-tab-content="formazione">
+            <ul style="margin: 0 0 0 1.2em; padding: 0;">
+              <li>Diploma Liceo Classico </li>
+              <li><b> Laurea triennale in Storia e Tutela dei Beni Artistici </b>- Università degli studi di Firenze</li>
+              <li> <b>Laurea magistrale in Informatica Umanistica </b> con <em> curriculum </em> in Grafica, interattività e ambienti virtuali- Università di Pisa</li>
+            </ul>
+          </div>
+          <div class="about-tab-content" data-tab-content="esperienza" style="display:none;">
+            <ul style="margin: 0 0 0 1.2em; padding: 0;">
+              <li>Progettazione e sviluppo di applicazioni web/mobile interattive</li>
+              <li>Modellazione e rendering 3D</li>
+              <li>Realizzazione di interfacce intuitive per ambienti virtuali e aumentati</li>
+              <li>Interazione uomo-macchina</li>
+              <li>User experience</li>
+            </ul>
+          </div>
+          <div class="about-tab-content" data-tab-content="interessi" style="display:none;">
+            Sono particolarmente interessata all’integrazione tra <b> arte, tecnologia e usabilità</b> per la creazione di strumenti digitali accessibili. Inoltre, mi appassionano le nuove tecnologie e il loro impatto sulla società, con un focus su come queste possano migliorare <b> l'esperienza utente </b> e la fruizione dei beni culturali, anche attraverso l'uso di tecnologie emergenti come la <b> realtà aumentata e virtuale.</b> 
+          </div>
+          <div class="about-tab-content" data-tab-content="contatti" style="display:none;">
+            <div class="contact-item">
+              <img src="risorse/position.png" alt="Position" class="icon-contact">
+              <span>Pisa, Italia</span>
+            </div>
+            <div class="contact-item">
+              <img src="risorse/email.png" alt="Email" class="icon-contact">
+              <span><a href="mailto:simeoliludovica@gmail.com" style="color:inherit;text-decoration:none;">simeoliludovica@gmail.com</a></span>
+            </div>
+            <div class="contact-item">
+              <img src="risorse/phone.png" alt="Phone" class="icon-contact">
+              <span>+39 3403788844</span>
+            </div>
+            <div class="contact-item">
+              <img src="risorse/linkedin.png" alt="LinkedIn" class="icon-contact">
+              <span><a href="https://www.linkedin.com/in/ludovica-simeoli-1b4653233/" target="_blank" style="color:inherit;text-decoration:none;">LinkedIn</a></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="about-card-photo">
+        <img src="risorse/profile.png" alt="profile" class="about-image" />
+      </div>
+    </div>
+    <footer>
+      <p>&copy; 2025 - Ludovica Simeoli</p>
+    </footer>
+  </main>
+</body>
+</html>

@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio - Ludovica Simeoli</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <aside class="sidebar">
+    <img src="risorse/LS.png" alt="LS" class="LS-logo" />
+    <nav>
+      <a href="index1.html">Home</a>
+      <a href="about.html">About me</a>
+      <a href="works.html" class="active">Portfolio</a>
+    </nav>
+  </aside>
+  <main class="main-content">
+    <section id="works">
+      <div class="polaroid-gallery polaroid-centered">
+        <div class="polaroid-row">
+          <div class="polaroid-card">
+            <img src="risorse/worldwide.png" alt="Siti" class="polaroid-img" />
+            <div class="polaroid-label">Siti</div>
+          </div>
+          <div class="polaroid-card">
+            <img src="risorse/prodottigrafici.png" alt="Prodotti Grafici" class="polaroid-img" />
+            <div class="polaroid-label">Prodotti Grafici</div>
+          </div>
+          <div class="polaroid-card">
+            <img src="risorse/vr.png" alt="Ambienti Virtuali" class="polaroid-img" />
+            <div class="polaroid-label">Ambienti Virtuali</div>
+          </div>
+        </div>
+        <div class="polaroid-row">
+          <div class="polaroid-card">
+            <img src="risorse/video.png" alt="Video" class="polaroid-img" />
+            <div class="polaroid-label">Video</div>
+          </div>
+          <div class="polaroid-card">
+            <img src="risorse/3d-modeling.png" alt="Elementi 3D" class="polaroid-img" />
+            <div class="polaroid-label">Elementi 3D</div>
+          </div>
+        </div>
+      </div>
+      <h3 style="margin-top:3rem;">I miei lavori</h3>
+      
+      <div id="work-detail" class="work-detail-card" style="display: flex;">
+        <button id="close-detail" class="close-detail-btn" title="Chiudi">&times;</button>
+        <div id="work-detail-content"></div>
+      </div>
+    </section>
+    <footer>
+      <p>&copy; 2025 - Ludovica Simeoli</p>
+    </footer>
+  </main>
+
+
+  <style>
+    .polaroid-gallery {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .polaroid-row {
+      display: flex;
+      flex-direction: row;
+      gap: 2.5rem;
+      justify-content: center;
+    }
+    .polaroid-card {
+      background: #EFC7E5; 
+      border-radius: 18px;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.13), 0 1.5px 6px rgba(0,0,0,0.08);
+      padding: 1.2rem 1.2rem 2.2rem 1.2rem;
+      width: 210px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      transition: transform 0.18s;
+    }
+    .polaroid-card:hover {
+      transform: scale(1.04) rotate(-2deg);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.18);
+    }
+    .polaroid-img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 1.1rem;
+      background: #f5f5f5;
+    }
+    .polaroid-img-original {
+      width: auto;
+      height: auto;
+      max-width: 180px;
+      max-height: 180px;
+      object-fit: contain;
+      background: #f5f5f5;
+      border-radius: 10px;
+      margin-bottom: 1.1rem;
+      display: block;
+    }
+    .polaroid-label {
+      font-family: 'Indie Flower', cursive;
+      font-size: 1.25rem;
+      color: #2C5F2D;
+      text-align: center;
+      margin-top: 0.2rem;
+      letter-spacing: 0.5px;
+      font-weight: bold;
+      text-shadow: 1px 1px 0 #fff, 0 2px 6px #E18AD433;
+    }
+    .polaroid-centered {
+      justify-content: flex-start !important;
+      margin-left: 420px !important;
+      margin-right: auto !important;
+      width: fit-content;
+    }
+    @media (max-width: 1400px) {
+      .polaroid-centered {
+        margin-left: 220px !important;
+      }
+    }
+    @media (max-width: 1200px) {
+      .polaroid-centered {
+        margin-left: 0 !important;
+        width: 100% !important;
+        justify-content: center !important;
+      }
+    }
+    @media (max-width: 900px) {
+      .polaroid-row {
+        flex-direction: column;
+        gap: 1.2rem;
+        align-items: center;
+      }
+      .polaroid-gallery {
+        gap: 1.2rem;
+      }
+      .polaroid-card {
+        width: 140px;
+        padding: 0.7rem 0.7rem 1.2rem 0.7rem;
+      }
+      .polaroid-img {
+        width: 110px;
+        height: 110px;
+      }
+      .polaroid-img-original {
+        max-width: 110px;
+        max-height: 110px;
+      }
+      .polaroid-label {
+        font-size: 1rem;
+      }
+    }
+  </style>
+  <script>
+
+const cards = document.querySelectorAll('.polaroid-card');
+const detail = document.getElementById('work-detail');
+const detailContent = document.getElementById('work-detail-content');
+const closeBtn = document.getElementById('close-detail');
+
+cards.forEach(card => {
+  card.addEventListener('click', () => {
+    const label = card.querySelector('.polaroid-label').textContent.trim();
+    detail.style.display = 'flex';
+    detail.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    if (label === 'Siti') {
+      detailContent.innerHTML = `
+      <h2 style="font-family: 'Indie Flower', cursive; color: #2C5F2D; font-size: 2.2rem; margin-bottom: 1.5rem;"> Siti Web</h2>
+       <span style='display: block; margin-bottom: 0.2rem; margin-left: 0rem; font-family: "Quicksand", sans-serif; font-size: 1.1rem; color: #2C5F2D; font-weight: bold; text-align: left; width: 500px; background: linear-gradient(90deg, #FFE066 60%, transparent 100%); border-radius: 6px; padding: 0.1em 0.4em;'>Sito Andrea Palladio Architetto</span>
+        <p style="font-family: 'Quicksand', sans-serif; color: #2C5F2D; font-size: 1.05rem; margin-top: 1.1rem; margin-bottom: 1.5rem; margin-left: 0rem; text-align: left;"> Sito onepage sulla vita e le opere del Palladio: interazione di video, mappe, pagine esterne e elementi aggiuntivi da scaricare (HTML e CSS) </p>
+        <div style="display: flex; gap: 0.7rem; justify-content: center; align-items: flex-start; margin-bottom: 2.2rem; flex-wrap: wrap;">
+          <img src='risorse/siti/palladio1.png' alt='Palladio 1' style='height: 320px; width: 100%; max-width: 340px; border-radius: 12px 0 0 12px; margin: 0; display: block; object-fit: contain; background: #fff; border: 1px solid #111;'>
+          <img src='risorse/siti/palladio2.png' alt='Palladio 2' style='height: 320px; width: 100%; max-width: 340px; margin: 0; display: block; object-fit: contain; background: #fff; border: 1px solid #111;'>
+          <img src='risorse/siti/palladio3.png' alt='Palladio 3' style='height: 320px; width: 100%; max-width: 340px; border-radius: 0 12px 12px 0; margin: 0; display: block; object-fit: contain; background: #fff; border: 1px solid #111;'>
+        </div>
+         <span style='display: block; margin-bottom: 0.2rem; margin-left: 0rem; font-family: "Quicksand", sans-serif; font-size: 1.1rem; color: #2C5F2D; font-weight: bold; text-align: left; width: 500px; background: linear-gradient(90deg, #FFE066 60%, transparent 100%); border-radius: 6px; padding: 0.1em 0.4em;'>Sito ditta di spedizione pacchi </span>
+        <p style="font-family: 'Quicksand', sans-serif; color: #2C5F2D; font-size: 1.05rem; margin-top: 1.1rem; margin-bottom: 1.5rem; margin-left: 0rem; text-align: left;"> Sito multipage - homepage / attivtà di selezione dimensioni pacco da spedire / form di dati e pagamento. (HTML e CSS) </p>
+        <div style="display: flex; gap: 0.7rem; justify-content: center; align-items: flex-start; margin-bottom: 2.2rem; flex-wrap: wrap;">
+          <img src='risorse/siti/responsive1.jpeg' alt='Responsive 1' style='height: 320px; width: 100%; max-width: 340px; border-radius: 12px 0 0 12px; margin: 0; display: block; object-fit: contain; background: #fff; border: 1px solid #111;'>
+          <img src='risorse/siti/responsive2.png' alt='Responsive 2' style='height: 320px; width: 100%; max-width: 340px; margin: 0; display: block; object-fit: contain; background: #fff; border: 1px solid #111;'>
+          <img src='risorse/siti/responsive3.jpeg' alt='Responsive 3' style='height: 320px; width: 100%; max-width: 340px; border-radius: 0 12px 12px 0; margin: 0; display: block; object-fit: contain; background: #fff; border: 1px solid #111;'>
+        </div>
+         <span style='display: block; margin-bottom: 0.2rem; margin-left: 0rem; font-family: "Quicksand", sans-serif; font-size: 1.1rem; color: #2C5F2D; font-weight: bold; text-align: left; width: 500px; background: linear-gradient(90deg, #FFE066 60%, transparent 100%); border-radius: 6px; padding: 0.1em 0.4em;'>Sito ditta di spezione pacchi (altra versione) </span>
+        <p style="font-family: 'Quicksand', sans-serif; color: #2C5F2D; font-size: 1.05rem; margin-top: 1.1rem; margin-left: 0rem; margin-bottom: 1.5rem; text-align:left;"> Sito onepage di preventivo personalizzato per spedizione pacchi e creazione di etichetta (HTML, CSS e JavaScript) </p>
+        <div style="display: flex; justify-content: center; align-items: center; width: 100%;">
+          <img src='risorse/siti/spedizioni.jpeg' alt='Sito spedizioni seconda versione' style='max-width: 600px; width: 100%; height: 650px; border-radius: 16px; margin: 0 auto; display: block; object-fit: cover; border: 1px solid #111; background: #fff;'>
+        </div>
+      `;
+    } else if (label === 'Elementi 3D') {
+      detailContent.innerHTML = `
+      <h2 style="font-family: 'Indie Flower', cursive; color: #2C5F2D; font-size: 2.2rem; margin-bottom: 1.5rem;"> Elementi 3D </h2>
+          <span style='display: block; margin-bottom: 0.2rem; margin-left: 2rem; font-family: "Quicksand", sans-serif; font-size: 1.1rem; color: #2C5F2D; font-weight: bold; text-align: left; width: 500px; background: linear-gradient(90deg, #FFE066 60%, transparent 100%); border-radius: 6px; padding: 0.1em 0.4em;'>Statua di Giovanni Cei </span>
+        <p style="font-family: 'Quicksand', sans-serif; color: #2C5F2D; font-size: 1.05rem; margin-top: 1.1rem; margin-bottom: 1.5rem; margin-left: 2rem; text-align: left;"> Renderizzazione 3D di una statua partendo da foto.  Prodotto realizzato con gli strumenti 3DHop e MeshLab.</p>
+          <div style=\"display: flex; gap: 0.7rem; justify-content: center; align-items: flex-start; margin-bottom: 2.2rem;\">
+          <img src='risorse/Cattura1.PNG' alt='Cattura 1' style='height: 360px; width: auto; max-width: 420px; border-radius: 12px 0 0 12px; margin: 0; display: block; object-fit: cover; border: 1px solid #111; background: #fff;'>
+          <img src='risorse/Cattura2.PNG' alt='Cattura 2' style='height: 360px; width: auto; max-width: 420px; margin: 0; display: block; object-fit: cover; border: 1px solid #111; background: #fff;'>
+          <img src='risorse/Cattura3.PNG' alt='Cattura 3' style='height: 360px; width: auto; max-width: 420px; border-radius: 0 12px 12px 0; margin: 0; display: block; object-fit: cover; border: 1px solid #111; background: #fff;'>
+        </div>
+      `;
+    } else if (label === 'Prodotti Grafici') {
+      detailContent.innerHTML = `
+        <h2 style="font-family: 'Indie Flower', cursive; color: #2C5F2D; font-size: 2.2rem; margin-bottom: 1.5rem;">Prodotti grafici</h2>
+          <span style='display: block; margin-bottom: 0.2rem; margin-left: 4rem; font-family: "Quicksand", sans-serif; font-size: 1.1rem; color: #2C5F2D; font-weight: bold; text-align: left; width: 500px; background: linear-gradient(90deg, #FFE066 60%, transparent 100%); border-radius: 6px; padding: 0.1em 0.4em;'>Fumetti al Caffè: fumetteria e caffetteria</span>
+<p style="font-family: 'Quicksand', sans-serif; color: #2C5F2D; font-size: 1.05rem; margin-top: 1.1rem; margin-bottom: 1.5rem; margin-left: 4rem; text-align: left;">Prodotti grafici coordinati per sponsorizzazione locale. Prodotti realizzati con Adobe Illustrator e Adobe Photoshop.  </p>
+    <div style="display: flex; gap: 0.7rem; justify-content: center; align-items: flex-start; flex-wrap: wrap; margin-bottom: 2.2rem;">
+      <div style='display: flex; flex-direction: column; align-items: center;'>
+        <img src='risorse/fumetto1.png' alt='Logo Fumetti al Caffè' style='height: 320px; width: 500px; max-width: 500px; border-radius: 12px; margin: 0; display: block; object-fit: cover; border: 1px solid #111;'>
+        <span style="font-family: 'Quicksand', sans-serif; color: #2C5F2D; font-size: 1.01rem; margin-top: 0.5rem; text-align: center; display: block; width: 100%;">Logo</span>
+      </div>
+      <div style='display: flex; flex-direction: column; align-items: center;'>
+        <img src='risorse/fumetto2.PNG' alt='Brochure fronte' style='height: 320px; width: 500px; max-width: 500px; border-radius: 12px; margin: 0; display: block; object-fit: cover; border: 1px solid #111;'>
+        <span style="font-family: 'Quicksand', sans-serif; color: #2C5F2D; font-size: 1.01rem; margin-top: 0.5rem; text-align: center; display: block; width: 100%;">Brochure - Fronte</span>
+      </div>
+      <div style='display: flex; flex-direction: column; align-items: center;'>
+        <img src='risorse/fumetto3.PNG' alt='Brochure retro' style='height: 320px; width: 450px; max-width: 450px; border-radius: 12px; margin: 0; display: block; object-fit: cover; border: 1px solid #111;'>
+        <span style="font-family: 'Quicksand', sans-serif; color: #2C5F2D; font-size: 1.01rem; margin-top: 0.5rem; text-align: center; display: block; width: 100%;">Brochure - Retro</span>
+      </div>
+      <div style='display: flex; flex-direction: column; align-items: center;'>
+        <img src='risorse/fumetto4.PNG' alt='Poster' style='height: 320px; width: auto; max-width: 420px; border-radius: 12px; margin: 0; display: block; object-fit: cover; border: 1px solid #111;'>
+        <span style="font-family: 'Quicksand', sans-serif; color: #2C5F2D; font-size: 1.01rem; margin-top: 0.5rem; text-align: center; display: block; width: 100%;">Poster</span>
+      </div>
+      <div style='display: flex; flex-direction: column; align-items: center;'>
+        <img src='risorse/fumetto5.PNG' alt='Mockup sito' style='height: 320px; width: auto; max-width: 420px; border-radius: 12px; margin: 0; display: block; object-fit: cover; border: 1px solid #111;'>
+        <span style="font-family: 'Quicksand', sans-serif; color: #2C5F2D; font-size: 1.01rem; margin-top: 0.5rem; text-align: center; display: block; width: 100%;">Mockup sito</span>
+      </div>
+    </div>
+          
+       <span style='display: block; margin-bottom: 0.2rem; margin-left: 6rem; font-family: "Quicksand", sans-serif; font-size: 1.1rem; color: #2C5F2D; font-weight: bold; text-align: left; width: 500px; background: linear-gradient(90deg, #FFE066 60%, transparent 100%); border-radius: 6px; padding: 0.1em 0.4em;'> Ottica NITIDO</span>
+        <p style="font-family: 'Quicksand', sans-serif; color: #2C5F2D; font-size: 1.05rem; margin-top: 1.1rem; margin-bottom: 1.5rem; margin-left: 6rem; text-align: left;">Materiale promozionale e grafica coordinata per Ottica Nitido: logo, poster e contenuti social. Progetto di branding e comunicazione visiva.Prodotti realizzati con Adobe Illustrator, Adobe Photoshop e Canva.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 0.7rem; justify-content: center; align-items: flex-start; margin-bottom: 2.2rem;">
+          <div style='display: flex; flex-direction: column; align-items: center;'>
+            <img src='risorse/nitido1.PNG' alt='Nitido 1' style='height: 320px; width: 450px; max-width: 450px; border-radius: 12px; margin: 0; display: block; object-fit: cover; border: 1px solid #111;'>
+            <span style="font-family: 'Quicksand', sans-serif; color: #2C5F2D; font-size: 1.01rem; margin-top: 0.5rem; text-align: center; display: block; width: 100%;">Logo </span>
+          </div>
+          <div style='display: flex; flex-direction: column; align-items: center;'>
+            <img src='risorse/nitido2.PNG' alt='Nitido 2' style='height: 320px; width: 500px; max-width: 500px; border-radius: 12px; margin: 0; display: block; object-fit: cover; border: 1px solid #111;'>
+            <span style="font-family: 'Quicksand', sans-serif; color: #2C5F2D; font-size: 1.01rem; margin-top: 0.5rem; text-align: center; display: block; width: 100%;">Post social</span>
+          </div>
+          <div style='display: flex; flex-direction: column; align-items: center;'>
+            <img src='risorse/nitido3.PNG' alt='Nitido 3' style='height: 320px; width: 420px; max-width: 420px; border-radius: 12px; margin: 32px 0 0 0; display: block; object-fit: contain; background: #fff; border: 1px solid #111;'>
+            <span style="font-family: 'Quicksand', sans-serif; color: #2C5F2D; font-size: 1.01rem; margin-top: 0.5rem; text-align: center; display: block; width: 100%;">Poster </span>
+          </div>
+          <div style='display: flex; flex-direction: column; align-items: center;'>
+            <img src='risorse/nitido4.PNG' alt='Nitido 4' style='height: 320px; width: 500px; max-width: 500px; border-radius: 12px; margin: 32px 0 0 0; display: block; object-fit: cover; border: 1px solid #111;'>
+            <span style="font-family: 'Quicksand', sans-serif; color: #2C5F2D; font-size: 1.01rem; margin-top: 0.5rem; text-align: center; display: block; width: 100%;">Biglietto da visita</span>
+          </div>
+          <div style='display: flex; flex-direction: column; align-items: center;'>
+            <img src='risorse/nitido5.PNG' alt='Nitido 5' style='height: 320px; width: 550px; max-width: 550px; border-radius: 12px; margin: 32px 0 0 0; display: block; object-fit: cover; border: 1px solid #111;'>
+            <span style="font-family: 'Quicksand', sans-serif; color: #2C5F2D; font-size: 1.01rem; margin-top: 0.5rem; text-align: center; display: block; width: 100%;"> Storie social </span>
+          </div>
+        </div>
+
+        <span style='display: block; margin-bottom: 0.2rem; margin-left: 10rem; font-family: "Quicksand", sans-serif; font-size: 1.1rem; color: #2C5F2D; font-weight: bold; text-align: left; width: 500px; background: linear-gradient(90deg, #FFE066 60%, transparent 100%); border-radius: 6px; padding: 0.1em 0.4em;'> Impaginato Banksy </span>
+        <p style="font-family: 'Quicksand', sans-serif; color: #2C5F2D; font-size: 1.05rem; margin-top: 1.1rem; margin-bottom: 1.5rem; margin-left: 10rem; text-align: left;">Progetto editoriale dedicato a Banksy: impaginazione e grafica di un volume illustrato realizzato con Adobe InDesign.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 0.7rem; justify-content: center; align-items: flex-start; margin-bottom: 2.2rem;">
+          <div style='display: flex; flex-direction: column; align-items: center;'>
+            <img src='risorse/banksy1.PNG' alt='Banksy 1' style='height: 320px; width: auto; max-width: 420px; border-radius: 12px; margin: 0; display: block; object-fit: cover; border: 1px solid #111;'>
+            <span style="font-family: 'Quicksand', sans-serif; color: #2C5F2D; font-size: 1.01rem; margin-top: 0.5rem; text-align: center; display: block; width: 100%;">Copertina volume</span>
+          </div>
+          <div style='display: flex; flex-direction: column; align-items: center;'>
+            <img src='risorse/banksy2.PNG' alt='Banksy 2' style='height: 320px; width: auto; max-width: 420px; border-radius: 12px; margin: 0; display: block; object-fit: cover; border: 1px solid #111;'>
+            <span style="font-family: 'Quicksand', sans-serif; color: #2C5F2D; font-size: 1.01rem; margin-top: 0.5rem; text-align: center; display: block; width: 100%;">Pagina interna 1</span>
+          </div>
+          <div style='display: flex; flex-direction: column; align-items: center;'>
+            <img src='risorse/banksy3.PNG' alt='Banksy 3' style='height: 320px; width: auto; max-width: 420px; border-radius: 12px; margin: 0; display: block; object-fit: cover; border: 1px solid #111;'>
+            <span style="font-family: 'Quicksand', sans-serif; color: #2C5F2D; font-size: 1.01rem; margin-top: 0.5rem; text-align: center; display: block; width: 100%;">Pagina interna 2</span>
+          </div>
+          <div style='display: flex; flex-direction: column; align-items: center;'>
+            <img src='risorse/banksy4.PNG' alt='Banksy 4' style='height: 320px; width: auto; max-width: 420px; border-radius: 12px; margin: 0; display: block; object-fit: cover; border: 1px solid #111;'>
+            <span style="font-family: 'Quicksand', sans-serif; color: #2C5F2D; font-size: 1.01rem; margin-top: 0.5rem; text-align: center; display: block; width: 100%;">Pagina interna 3</span>
+          </div>
+          <div style='display: flex; flex-direction: column; align-items: center;'>
+            <img src='risorse/banksy5.PNG' alt='Banksy 5' style='height: 320px; width: auto; max-width: 420px; border-radius: 12px; margin: 0; display: block; object-fit: cover; border: 1px solid #111;'>
+            <span style="font-family: 'Quicksand', sans-serif; color: #2C5F2D; font-size: 1.01rem; margin-top: 0.5rem; text-align: center; display: block; width: 100%;">Pagina interna 4</span>
+          </div>
+          <div style='display: flex; flex-direction: column; align-items: center;'>
+            <img src='risorse/banksy6.PNG' alt='Banksy 6' style='height: 320px; width: auto; max-width: 420px; border-radius: 12px; margin: 0; display: block; object-fit: cover; border: 1px solid #111;'>
+            <span style="font-family: 'Quicksand', sans-serif; color: #2C5F2D; font-size: 1.01rem; margin-top: 0.5rem; text-align: center; display: block; width: 100%;">Retro copertina</span>
+          </div>
+        </div>
+      `;
+    } else if (label === 'Video') {
+      detailContent.innerHTML = `
+        <h2 style="font-family: 'Indie Flower', cursive; color: #2C5F2D; font-size: 2.2rem; margin-bottom: 1.5rem;"> Prodotti Video</h2>
+        <div style="display: flex; flex-wrap: wrap; gap: 2.2rem; justify-content: center; align-items: flex-start; margin-bottom: 2.2rem;">
+          <div style='display: flex; flex-direction: column; align-items: center;'>
+            <video controls style='width: 420px; max-width: 100%; border-radius: 14px; border: 1px solid #111; background: #fff; box-shadow: 0 2px 12px #E18AD433;'>
+              <source src='risorse/SPOT.mp4' type='video/mp4'>
+              Il tuo browser non supporta il tag video.
+            </video>
+            <span style='margin-top: 0.7rem; font-family: "Quicksand", sans-serif; font-size: 1.1rem; color: #2C5F2D; font-weight: bold; display: inline-block; background: linear-gradient(90deg, #FFE066 60%, transparent 100%); border-radius: 6px; padding: 0.1em 0.4em;'> Spot Ottica NITIDO </span>
+            <p style="font-family: 'Quicksand', sans-serif; color: #2C5F2D; font-size: 0.98rem; margin: 0.3rem 0 0.7rem 0; text-align: center; max-width: 420px;">Spot pubblicitario per l'ottica Nitido, realizzato per promuovere la nuova collezione di occhiali. Video realizzato con Adobe Premiere Pro</p>
+          </div>
+          <div style='display: flex; flex-direction: column; align-items: center;'>
+            <video controls style='width: 420px; max-width: 100%; border-radius: 14px; border: 1px solid #111; background: #fff; box-shadow: 0 2px 12px #E18AD433;'>
+              <source src='risorse/Zorro in pensione.mp4' type='video/mp4'>
+              Il tuo browser non supporta il tag video.
+            </video>
+            <span style='margin-top: 0.7rem; font-family: "Quicksand", sans-serif; font-size: 1.1rem; color: #2C5F2D; font-weight: bold; display: inline-block; background: linear-gradient(90deg, #FFE066 60%, transparent 100%); border-radius: 6px; padding: 0.1em 0.4em;'> Zorro in Pensione </span>
+            <p style="font-family: 'Quicksand', sans-serif; color: #2C5F2D; font-size: 0.98rem; margin: 0.3rem 0 0.7rem 0; text-align: center; max-width: 420px;">Cortometraggio ironico che racconta la vita di Zorro dopo la pensione. Video realizzato con Adobe Premiere Pro. </p>
+            <a href="risorse/ZorroInPensioneCompress.zip" download style="display: inline-block; background: linear-gradient(90deg, #F9D6EC 60%, #EFC7E5 100%); color: #2C5F2D; font-family: 'Quicksand', sans-serif; font-weight: bold; padding: 0.35em 1.1em; border-radius: 7px; font-size: 0.98rem; text-decoration: none; box-shadow: 0 2px 8px #E18AD433; border: 1.5px solid #EFC7E5; margin-top: 0.2rem; transition: background 0.2s;">Scarica il video completo (zip)</a>
+          </div>
+        </div>
+      `;
+    } else if (label === 'Ambienti Virtuali') {
+      detailContent.innerHTML = `
+      <h2 style="font-family: 'Indie Flower', cursive; color: #2C5F2D; font-size: 2.2rem; margin-bottom: 1.5rem;"> Ambienti virtuali</h2>
+        <span style='display: block; margin-bottom: 0.2rem; margin-left: 2rem; font-family: "Quicksand", sans-serif; font-size: 1.1rem; color: #2C5F2D; font-weight: bold; text-align: left; width: 500px; background: linear-gradient(90deg, #FFE066 60%, transparent 100%); border-radius: 6px; padding: 0.1em 0.4em;'> Lo store di Nitido</span>
+        <p style="font-family: 'Quicksand', sans-serif; color: #2C5F2D; font-size: 1.05rem; margin-top: 1.1rem; margin-bottom: 1.5rem; margin-left: 2rem; text-align: left; max-width: 700px;"> Store virtuale dell'ottica Nitido realizzata con Artsteps: questo elemento fa parte della campagna pubblicitaria del marchio 'Nitido' i cui prodotti coordinati sono presenti nella sezione prodotti grafici.</p>
+        <div style='border: 2.5px solid #EFC7E5; border-radius: 14px; padding: 1.1rem 1.2rem; margin: 0 2rem 1.5rem 2rem; background: #fff; min-height: 60px; display: flex; align-items: center; justify-content: center;'>
+        <video controls style='width: 100%; max-width: 700px; height: auto; display: block; border-radius: 14px; border: 1px solid #111; background: #fff; box-shadow: 0 2px 12px #E18AD433;'>
+              <source src='risorse/Video_Nitido.mp4' type='video/mp4'>
+              Il tuo browser non supporta il tag video.
+            </video>
+          </div>
+        <div style='display: flex; flex-direction: row; justify-content: flex-start; align-items: flex-end; margin-bottom: 2.2rem; width: 100%;'>
+          <a href="https://www.artsteps.com/view/642bd5978f8e5f1e9738f1c8" target="_blank" rel="noopener" style="display: inline-block; background: linear-gradient(90deg, #F9D6EC 60%, #EFC7E5 100%); color: #2C5F2D; font-family: 'Quicksand', sans-serif; font-weight: bold; padding: 0.35em 1.1em; border-radius: 7px; font-size: 0.98rem; text-decoration: none; box-shadow: 0 2px 8px #E18AD433; border: 1.5px solid #EFC7E5; margin-top: 0.2rem; margin-left: 2.5rem; transition: background 0.2s;">Visualizza store</a>
+        </div>
+        <span style='display: block; margin-bottom: 0.2rem; margin-left: 2rem; font-family: "Quicksand", sans-serif; font-size: 1.1rem; color: #2C5F2D; font-weight: bold; text-align: left; width: 500px; background: linear-gradient(90deg, #FFE066 60%, transparent 100%); border-radius: 6px; padding: 0.1em 0.4em;'> Videogioco ambientato nello spazio</span>
+        <p style="font-family: 'Quicksand', sans-serif; color: #2C5F2D; font-size: 1.05rem; margin-top: 1.1rem; margin-bottom: 1.5rem; margin-left: 2rem; text-align: left; max-width: 700px;"> Videogioco interattivo realizzato con Unity: ti trovi nello spazio, a bordo di una navicella che interagirà con pianeti e meteoriti. Scarica ed esegui il file per provare l'esperienza immersiva.</p>
+        <div style='border: 2.5px solid #EFC7E5; border-radius: 14px; padding: 1.1rem 1.2rem; margin: 0 2rem 1.5rem 2rem; background: #fff; min-height: 60px; display: flex; align-items: center; justify-content: center;'>
+           <video controls style='width: 100%; max-width: 700px; height: auto; display: block; border-radius: 14px; border: 1px solid #111; background: #fff; box-shadow: 0 2px 12px #E18AD433;'>
+              <source src='risorse/Video_AV.mp4' type='video/mp4'>
+              Il tuo browser non supporta il tag video.
+            </video>
+        </div>
+        <div style='display: flex; flex-direction: row; justify-content: flex-start; align-items: flex-end; margin-bottom: 2.2rem; width: 100%;'>
+          <a href="risorse/Progetto AV.zip" download style="display: inline-block; background: linear-gradient(90deg, #F9D6EC 60%, #EFC7E5 100%); color: #2C5F2D; font-family: 'Quicksand', sans-serif; font-weight: bold; padding: 0.35em 1.1em; border-radius: 7px; font-size: 0.98rem; text-decoration: none; box-shadow: 0 2px 8px #E18AD433; border: 1.5px solid #EFC7E5; margin-top: 0.2rem; margin-left: 2.5rem; transition: background 0.2s;">Scarica il gioco (zip)</a>
+        </div>
+      `;
+    } else {
+      detailContent.innerHTML = '';
+    }
+    
+  });
+});
+
+closeBtn.addEventListener('click', () => {
+  detail.style.display = 'none';
+  
+  document.querySelector('.polaroid-gallery').scrollIntoView({ behavior: 'smooth', block: 'center' });
+});
+  </script>
+  <style>
+.work-detail-card {
+  width: 76.7vw;
+  margin: 0rem auto 5rem 210px;
+  background: #fff;
+  border-radius: 22px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.10);
+  padding: 2.5rem 2.5rem 2rem 2.5rem;
+  min-height: 180px;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.2rem;
+  color: #2C5F2D;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+  left: 0;
+  z-index: 10;
+  overflow-y: auto;
+  max-height: 80vh;
+}
+.close-detail-btn {
+  position: absolute;
+  top: 18px;
+  right: 32px;
+  background: #EFC7E5;
+  color: #2C5F2D;
+  border: none;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 8px #E18AD433;
+  transition: background 0.2s, color 0.2s;
+}
+.close-detail-btn:hover {
+  background: #F9ADA0;
+  color: #D782BA;
+}
+@media (max-width: 1400px) {
+  .work-detail-card {
+    margin-left: 110px;
+    max-width: 98vw;
+    width: 98vw;
+  }
+}
+@media (max-width: 1200px) {
+  .work-detail-card {
+    margin: 3rem auto 2rem auto;
+    max-width: 99vw;
+    width: 99vw;
+  }
+}
+@media (max-width: 900px) {
+  .work-detail-card {
+    padding: 1.2rem 0.7rem 1.2rem 0.7rem;
+    font-size: 1rem;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: 0;
+  }
+}
+body, html {
+  overflow-y: auto !important;
+}
+  </style>
+</body>
+</html>
