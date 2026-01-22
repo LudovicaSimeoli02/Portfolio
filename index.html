@@ -21,16 +21,13 @@
 
       /* Mostra il testo di benvenuto */
       .mobile-welcome {
-        display: block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 60vh;
         text-align: center;
-        font-size: 1.4rem;
-        padding: 2rem;
-      }
-
-      /* Forza scroll orizzontale */
-      html, body {
-        overflow-x: auto;
-        overflow-y: hidden;
+        font-size: 1.3rem;
+        padding: 1rem;
       }
 
       /* Nascondi sidebar su mobile */
@@ -49,6 +46,10 @@
       .social-buttons img {
         width: 20px !important;
         height: 20px !important;
+      }
+      html, body {
+        overflow-x: auto;
+        overflow-y: hidden;
       }
     }
   </style>
