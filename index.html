@@ -12,20 +12,20 @@
        ========================= */
     @media (max-width: 768px) {
 
-      /* Sidebar → navbar orizzontale compatta */
+      /* Sidebar → solo contenitore invisibile */
       .sidebar {
         position: fixed;
-        top: 0;
+        top: 1rem;
         left: 0;
         width: 100%;
-        height: 48px;
+        height: auto;
         display: flex;
         justify-content: center;
         align-items: center;
+        background: transparent;   /* 🔥 niente barra */
+        box-shadow: none;          /* 🔥 niente ombra */
         padding: 0;
-        background-color: #fff;
         z-index: 1000;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
       }
 
       /* Nascondi logo */
@@ -42,6 +42,7 @@
       .sidebar nav a {
         font-size: 0.85rem;
         white-space: nowrap;
+        text-decoration: none;
       }
 
       /* Nascondi immagine desktop */
@@ -49,17 +50,17 @@
         display: none !important;
       }
 
-      /* Spazio sotto la navbar */
+      /* Spazio sopra per il menu */
       .main-content {
-        padding-top: 48px;
+        padding-top: 4rem;
       }
 
-      /* Testo di benvenuto mobile */
+      /* Testo mobile */
       .mobile-welcome {
         display: flex !important;
         justify-content: center;
         align-items: center;
-        min-height: calc(100vh - 48px);
+        min-height: calc(100vh - 4rem);
         text-align: center;
         font-size: 1.3rem;
         padding: 1.5rem;
@@ -93,7 +94,7 @@
 
 <body>
 
-  <!-- SIDEBAR / NAV -->
+  <!-- MENU -->
   <aside class="sidebar">
     <img src="risorse/LS.png" alt="LS" class="LS-logo" />
     <nav>
