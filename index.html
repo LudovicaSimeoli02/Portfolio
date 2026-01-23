@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio_LS</title>
+
   <style>
     /* =========================
        GENERALE
@@ -12,7 +13,8 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Helvetica, Arial, sans-serif;
     }
 
     body {
@@ -22,39 +24,71 @@
       text-align: center;
     }
 
-    /* MENU IN ALTO */
+    /* =========================
+       MENU IN ALTO
+       ========================= */
     nav {
       display: flex;
       justify-content: center;
       gap: 2rem;
-      padding: 1rem 0;
-      background-color: #f8f8f8; /* sfondo leggero per il menu */
+      padding: 2rem 0;
+      background-color: #f8f8f8;
     }
 
     nav a {
       text-decoration: none;
-      color: #D4A89B; /* colore menu modificato */
+      color: #D4A89B;
       font-weight: 600;
-      font-size: 1.5rem; /* dimensione testo maggiore su desktop */
-      transition: color 0.3s;
+      font-size: 1.5rem;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    /* underline animata */
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 0;
+      height: 3px;
+      background-color: #C07A67;
+      transition: width 0.3s ease;
     }
 
     nav a:hover {
-      color: #ffb3a1; /* leggero effetto hover */
+      color: #C07A67;
     }
 
-    /* CONTENITORE CENTRALE (foto + social) */
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* pagina attiva */
+    nav a.active {
+      font-weight: 800;
+      color: #2F2D2E;
+    }
+
+    nav a.active::after {
+      width: 100%;
+      background-color: #2F2D2E;
+    }
+
+    /* =========================
+       CONTENUTO CENTRALE
+       ========================= */
     .main-content {
-      flex: 1; /* prende tutto lo spazio disponibile tra menu e footer */
+      flex: 1;
       display: flex;
       flex-direction: column;
-      justify-content: center; /* centra verticalmente foto + social */
-      align-items: center;     /* centra orizzontalmente */
-      gap: 2rem;               /* spazio tra elementi */
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
       padding: 1rem;
     }
 
-    /* FOTO CENTRATA */
+    /* FOTO */
     .foto {
       display: block;
       max-width: 90vw;
@@ -62,11 +96,11 @@
       width: auto;
       height: auto;
       border-radius: 22px;
-      box-shadow: 0 6px 24px rgba(0,0,0,0.13);
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.13);
       object-fit: cover;
     }
 
-    /* SOCIAL BUTTONS */
+    /* SOCIAL */
     .social-buttons {
       display: flex;
       justify-content: center;
@@ -81,7 +115,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
       text-decoration: none;
     }
 
@@ -90,9 +124,11 @@
       height: 24px;
     }
 
-    /* FOOTER */
+    /* =========================
+       FOOTER
+       ========================= */
     footer {
-      font-size: 1.1rem; 
+      font-size: 1.1rem;
       color: #2F2D2E;
       padding: 1rem 0;
     }
@@ -102,40 +138,43 @@
        ========================= */
     @media (max-width: 768px) {
       nav a {
-        font-size: 1.2rem; /* aumenta anche su mobile */
+        font-size: 1.2rem;
       }
+
       .social-buttons a {
         width: 44px;
         height: 44px;
       }
+
       .social-buttons img {
         width: 20px;
         height: 20px;
       }
+
       .foto {
         max-height: 50vh;
       }
+
       footer {
-        font-size: 1rem; 
+        font-size: 1rem;
       }
     }
   </style>
 </head>
+
 <body>
 
   <!-- MENU -->
   <nav>
-    <a href="index.html">Home</a>
+    <a href="index.html" class="active">Home</a>
     <a href="about.html">About me</a>
     <a href="works.html">My projects</a>
   </nav>
 
-  <!-- CONTENITORE CENTRALE -->
+  <!-- CONTENUTO CENTRALE -->
   <div class="main-content">
-    <!-- FOTO CENTRATA -->
     <img src="risorse/fotohome.png" alt="Foto Home" class="foto" />
 
-    <!-- SOCIAL BUTTONS -->
     <div class="social-buttons">
       <a href="https://www.linkedin.com/in/ludovica-simeoli-1b4653233/" target="_blank">
         <img src="risorse/linkedin.icona.png" alt="LinkedIn" />
