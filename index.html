@@ -4,74 +4,59 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio_LS</title>
-  <link rel="stylesheet" href="style.css" />
-
   <style>
     /* =========================
        GENERALE
        ========================= */
-    body, html {
+    * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     }
 
-    .sidebar {
-      position: fixed;
-      top: 1rem;
-      left: 0;
-      width: 100%;
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      text-align: center;
+    }
+
+    /* MENU IN ALTO */
+    nav {
       display: flex;
       justify-content: center;
-      align-items: center;
-      z-index: 1000;
-      background: transparent;
+      gap: 2rem;
+      padding: 1rem 0;
+      background-color: #f8f8f8; /* sfondo leggero per il menu */
     }
 
-    .LS-logo {
-      display: block;
-      height: 50px;
-      margin-right: 1rem;
-    }
-
-    .sidebar nav {
-      display: flex;
-      gap: 1rem;
-    }
-
-    .sidebar nav a {
+    nav a {
       text-decoration: none;
       color: #222;
       font-weight: 500;
       font-size: 1rem;
     }
 
-    main {
-      display: flex;
-      flex-direction: column;
-      align-items: center;  /* centrato orizzontalmente */
-      justify-content: center; /* centrato verticalmente */
-      min-height: 100vh;
-      padding: 1rem;
-      position: relative;
-      text-align: center;
-    }
-
-    .main-content img {
+    /* FOTO CENTRATA */
+    .foto {
+      display: block;
       max-width: 90vw;
       max-height: 60vh;
       width: auto;
       height: auto;
+      margin: 2rem auto;
       border-radius: 22px;
       box-shadow: 0 6px 24px rgba(0,0,0,0.13);
       object-fit: cover;
     }
 
+    /* SOCIAL BUTTONS */
     .social-buttons {
       display: flex;
-      gap: 1.4rem;
-      margin-top: 1.5rem;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
     }
 
     .social-buttons a {
@@ -91,85 +76,66 @@
       height: 24px;
     }
 
+    /* FOOTER */
     footer {
-      margin-top: 2rem;
+      margin-bottom: 1rem;
     }
 
     footer p {
       font-size: 0.9rem;
-      margin: 0;
+      color: #555;
     }
 
     /* =========================
        MOBILE
        ========================= */
     @media (max-width: 768px) {
-
-      .LS-logo {
-        display: none;
-      }
-
-      .sidebar nav a {
+      nav a {
         font-size: 0.85rem;
-        padding: 0.2rem 0.5rem;
       }
-
-      .main-content img {
-        max-width: 90vw;
-        max-height: 50vh;
-      }
-
       .social-buttons a {
         width: 44px;
         height: 44px;
       }
-
       .social-buttons img {
         width: 20px;
         height: 20px;
       }
-
+      .foto {
+        max-height: 50vh;
+      }
       footer p {
         font-size: 0.8rem;
       }
     }
-
   </style>
 </head>
 <body>
 
   <!-- MENU -->
-  <aside class="sidebar">
-    <img src="risorse/LS.png" alt="LS" class="LS-logo" />
-    <nav>
-      <a href="index.html" class="active">Home</a>
-      <a href="about.html">About me</a>
-      <a href="works.html">My projects</a>
-    </nav>
-  </aside>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About me</a>
+    <a href="works.html">My projects</a>
+  </nav>
 
-  <!-- MAIN -->
-  <main class="main-content">
+  <!-- FOTO CENTRATA -->
+  <img src="risorse/fotohome.png" alt="Foto Home" class="foto" />
 
-    <!-- FOTO CENTRATA -->
-    <img src="risorse/fotohome.png" alt="Foto Home" />
+  <!-- SOCIAL BUTTONS -->
+  <div class="social-buttons">
+    <a href="https://www.linkedin.com/in/ludovica-simeoli-1b4653233/" target="_blank">
+      <img src="risorse/linkedin.icona.png" alt="LinkedIn" />
+    </a>
+    <a href="https://github.com/LudovicaSimeoli02" target="_blank">
+      <img src="risorse/git.icona.png" alt="GitHub" />
+    </a>
+  </div>
 
-    <!-- SOCIAL BUTTONS SOTTO LA FOTO -->
-    <div class="social-buttons">
-      <a href="https://www.linkedin.com/in/ludovica-simeoli-1b4653233/" target="_blank">
-        <img src="risorse/linkedin.icona.png" alt="LinkedIn" />
-      </a>
-      <a href="https://github.com/LudovicaSimeoli02" target="_blank">
-        <img src="risorse/git.icona.png" alt="GitHub" />
-      </a>
-    </div>
-
-    <!-- FOOTER -->
-    <footer>
-      <p>&copy; 2025 - Ludovica Simeoli</p>
-    </footer>
-
-  </main>
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 - Ludovica Simeoli</p>
+  </footer>
 
 </body>
 </html>
