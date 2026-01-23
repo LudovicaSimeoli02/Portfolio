@@ -38,15 +38,15 @@
       font-size: 1rem;
     }
 
-    /* CONTENITORE CENTRALE (foto + social + footer) */
+    /* CONTENITORE CENTRALE (foto + social) */
     .main-content {
-      flex: 1; /* prende tutto lo spazio disponibile sotto il menu */
+      flex: 1; /* prende tutto lo spazio disponibile tra menu e footer */
       display: flex;
       flex-direction: column;
-      justify-content: center; /* centra verticalmente */
+      justify-content: center; /* centra verticalmente foto + social */
       align-items: center;     /* centra orizzontalmente */
       gap: 2rem;               /* spazio tra elementi */
-      padding: 1rem;           /* piccolo padding per mobile */
+      padding: 1rem;
     }
 
     /* FOTO CENTRATA */
@@ -89,6 +89,7 @@
     footer {
       font-size: 0.9rem;
       color: #555;
+      padding: 1rem 0;
     }
 
     /* =========================
@@ -138,12 +139,12 @@
         <img src="risorse/git.icona.png" alt="GitHub" />
       </a>
     </div>
-
-    <!-- FOOTER -->
-    <footer>
-      <p>&copy; 2025 - Ludovica Simeoli</p>
-    </footer>
   </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 - Ludovica Simeoli</p>
+  </footer>
 
 </body>
 </html>
