@@ -5,7 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio_LS</title>
   <style>
-   
+    /* =========================
+       GENERALE
+       ========================= */
+    * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -25,14 +28,19 @@
       justify-content: center;
       gap: 2rem;
       padding: 1rem 0;
-      background-color: #f8f8f8; 
+      background-color: #f8f8f8; /* sfondo leggero per il menu */
     }
 
     nav a {
       text-decoration: none;
-      color: #222;
-      font-weight: 500;
-      font-size: 1rem;
+      color: #FFC9B9; /* colore menu modificato */
+      font-weight: 600;
+      font-size: 1.2rem; /* dimensione testo maggiore su desktop */
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffb3a1; /* leggero effetto hover */
     }
 
     /* CONTENITORE CENTRALE (foto + social) */
@@ -84,8 +92,8 @@
 
     /* FOOTER */
     footer {
-      font-size: 0.9rem;
-      color: #555;
+      font-size: 1.1rem; /* testo più grande */
+      color: #FFC9B9;   /* colore modificato */
       padding: 1rem 0;
     }
 
@@ -94,7 +102,7 @@
        ========================= */
     @media (max-width: 768px) {
       nav a {
-        font-size: 0.85rem;
+        font-size: 1rem; /* aumenta anche su mobile */
       }
       .social-buttons a {
         width: 44px;
@@ -108,7 +116,7 @@
         max-height: 50vh;
       }
       footer {
-        font-size: 0.8rem;
+        font-size: 1rem; /* testo più grande su mobile */
       }
     }
   </style>
@@ -145,4 +153,3 @@
 
 </body>
 </html>
- 
