@@ -4,9 +4,26 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About me - Ludovica Simeoli</title>
-  <link rel="stylesheet" href="style.css" />
-  <script src="about.js" defer></script>
+
   <style>
+    /* =========================
+       GENERALE
+       ========================= */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
+
     /* =========================
        MENU IN ALTO (UGUALE HOME)
        ========================= */
@@ -56,18 +73,14 @@
     }
 
     /* =========================
-       TITOLO
+       CONTENUTO ABOUT
        ========================= */
     .about-title-handwritten {
       margin: 2rem 0 1rem;
       font-size: 3rem;
       font-weight: 600;
-      text-align: center;
     }
 
-    /* =========================
-       CONTENUTO PRINCIPALE
-       ========================= */
     .main-content {
       flex: 1;
       padding: 2rem 1rem;
@@ -87,16 +100,13 @@
       flex: 1 1 500px;
       display: flex;
       gap: 1.2rem;
-      flex-direction: column;
     }
 
     /* TABS */
     .about-tabs {
       display: flex;
+      flex-direction: column;
       gap: 0.5rem;
-      flex-wrap: wrap;
-      justify-content: flex-start;
-      margin-bottom: 1rem;
     }
 
     .about-tab-btn {
@@ -105,13 +115,11 @@
       cursor: pointer;
       background: #f2f2f2;
       font-weight: 600;
-      border-radius: 6px;
-      transition: background 0.3s, color 0.3s;
     }
 
     .about-tab-btn.active {
       background: #D68C45;
-      color: #fff;
+      color: white;
     }
 
     .about-tab-content-card {
@@ -120,6 +128,7 @@
       border-radius: 12px;
       box-shadow: 0 6px 20px rgba(0,0,0,0.1);
       text-align: left;
+      flex: 1;
       min-height: 200px; /* assicura altezza minima per le tab */
     }
 
@@ -137,6 +146,19 @@
       width: 100%;
       border-radius: 18px;
       box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+
+    /* CONTATTI */
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .icon-contact {
+      width: 20px;
+      height: 20px;
     }
 
     /* FOOTER */
@@ -159,17 +181,8 @@
         font-size: 2.2rem;
       }
 
-      .about-grid {
-        flex-direction: column;
-        align-items: center;
-      }
-
       .about-col-formazione-esperienza {
-        width: 100%;
-      }
-
-      .about-card-photo {
-        width: 80%;
+        flex-direction: column;
       }
 
       footer {
@@ -177,6 +190,9 @@
       }
     }
   </style>
+
+  <!-- INCLUSIONE CORRETTA DEL FILE JS -->
+  <script src="about.js" defer></script>
 </head>
 
 <body>
@@ -198,7 +214,7 @@
       <!-- COLONNA TABS + CONTENUTI -->
       <div class="about-col-formazione-esperienza">
         <div class="about-tabs">
-          <button class="about-tab-btn" data-tab="formazione">Formazione</button>
+          <button class="about-tab-btn active" data-tab="formazione">Formazione</button>
           <button class="about-tab-btn" data-tab="esperienza">Esperienza</button>
           <button class="about-tab-btn" data-tab="interessi">Interessi</button>
           <button class="about-tab-btn" data-tab="contatti">Contatti</button>
