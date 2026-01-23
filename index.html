@@ -90,20 +90,20 @@
     /* FOTO */
     .foto {
   display: block;
-  max-width: 90vw;     /* mobile + base */
+  width: 100%;        
+  max-width: 90vw;    
   max-height: 60vh;
-  width: auto;
   height: auto;
   border-radius: 22px;
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.13);
   object-fit: cover;
 }
     /*foto solo desktop*/
-    @media (min-width: 1024px) {
+   @media (min-width: 1024px) {
   .foto {
-    max-width: 1500px;   /* più larga su desktop */
-  }
-}
+    max-width: 1600px;
+    max-height: 70vh;
+  }}
     
     /* SOCIAL */
     .social-buttons {
