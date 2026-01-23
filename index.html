@@ -89,16 +89,22 @@
 
     /* FOTO */
     .foto {
-      display: block;
-      max-width: 90vw;
-      max-height: 60vh;
-      width: auto;
-      height: auto;
-      border-radius: 22px;
-      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.13);
-      object-fit: cover;
-    }
-
+  display: block;
+  max-width: 90vw;     /* mobile + base */
+  max-height: 60vh;
+  width: auto;
+  height: auto;
+  border-radius: 22px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.13);
+  object-fit: cover;
+}
+    /*foto solo desktop*/
+    @media (min-width: 1024px) {
+  .foto {
+    max-width: 1100px;   /* più larga su desktop */
+  }
+}
+    
     /* SOCIAL */
     .social-buttons {
       display: flex;
