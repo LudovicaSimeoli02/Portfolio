@@ -28,7 +28,7 @@
       justify-content: center;
       gap: 2rem;
       padding: 1rem 0;
-      background-color: #f8f8f8; /* sfondo leggero per il menu */
+      background-color: #f8f8f8;
     }
 
     nav a {
@@ -38,14 +38,20 @@
       font-size: 1rem;
     }
 
+    /* CONTENITORE PRINCIPALE */
+    .container {
+      flex: 1; /* occupa tutto lo spazio rimanente */
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around; /* spinge foto, tasti e footer in basso */
+      align-items: center;
+    }
+
     /* FOTO CENTRATA */
     .foto {
-      display: block;
-      max-width: 90vw;
-      max-height: 60vh;
+      max-width: 80vw; /* più larga su desktop */
       width: auto;
       height: auto;
-      margin: 2rem auto;
       border-radius: 22px;
       box-shadow: 0 6px 24px rgba(0,0,0,0.13);
       object-fit: cover;
@@ -56,7 +62,6 @@
       display: flex;
       justify-content: center;
       gap: 1.5rem;
-      margin-bottom: 2rem;
     }
 
     .social-buttons a {
@@ -78,7 +83,7 @@
 
     /* FOOTER */
     footer {
-      margin-bottom: 1rem;
+      margin-top: 1rem;
     }
 
     footer p {
@@ -93,17 +98,22 @@
       nav a {
         font-size: 0.85rem;
       }
+
+      .foto {
+        max-width: 90vw;
+        max-height: 50vh;
+      }
+
       .social-buttons a {
         width: 44px;
         height: 44px;
       }
+
       .social-buttons img {
         width: 20px;
         height: 20px;
       }
-      .foto {
-        max-height: 50vh;
-      }
+
       footer p {
         font-size: 0.8rem;
       }
@@ -119,23 +129,14 @@
     <a href="works.html">My projects</a>
   </nav>
 
-  <!-- FOTO CENTRATA -->
-  <img src="risorse/fotohome.png" alt="Foto Home" class="foto" />
+  <!-- CONTENITORE PRINCIPALE -->
+  <div class="container">
+    <!-- FOTO CENTRATA -->
+    <img src="risorse/fotohome.png" alt="Foto Home" class="foto" />
 
-  <!-- SOCIAL BUTTONS -->
-  <div class="social-buttons">
-    <a href="https://www.linkedin.com/in/ludovica-simeoli-1b4653233/" target="_blank">
-      <img src="risorse/linkedin.icona.png" alt="LinkedIn" />
-    </a>
-    <a href="https://github.com/LudovicaSimeoli02" target="_blank">
-      <img src="risorse/git.icona.png" alt="GitHub" />
-    </a>
-  </div>
-
-  <!-- FOOTER -->
-  <footer>
-    <p>&copy; 2025 - Ludovica Simeoli</p>
-  </footer>
-
-</body>
-</html>
+    <!-- SOCIAL BUTTONS -->
+    <div class="social-buttons">
+      <a href="https://www.linkedin.com/in/ludovica-simeoli-1b4653233/" target="_blank">
+        <img src="risorse/linkedin.icona.png" alt="LinkedIn" />
+      </a>
+      <a href="https://github.com/L
