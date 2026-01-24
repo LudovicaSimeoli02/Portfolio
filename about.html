@@ -32,7 +32,7 @@
       justify-content: center;
       gap: 2rem;
       padding: 2rem 0;
-      background-color: #eff4ea;
+      background-color: #C9DBBA;
     }
 
     nav a {
@@ -108,9 +108,9 @@
       padding: 0.6rem 1rem;
       border: none;
       cursor: pointer;
-      background: #f7e8da;
+      background: #E4CCD6;
       font-weight: 600;
-      transition: background 0.3s ease;
+      text-align: left;
     }
 
     .about-tab-btn.active {
@@ -122,7 +122,7 @@
        CARD CONTENUTI
        ========================= */
     .about-tab-content-card {
-      background: #f7e8da;
+      background: #E4CCD6;
       padding: 1.2rem;
       border-radius: 18px;
       box-shadow: 0 6px 20px rgba(0,0,0,0.1);
@@ -141,19 +141,24 @@
        ========================= */
     .about-card-photo {
       flex: 0 1 300px;
-      background: #f7e8da;
+      background: #E4CCD6;
       padding: 1rem;
       border-radius: 18px;
       box-shadow: 0 6px 20px rgba(0,0,0,0.1);
       display: flex;
       align-items: stretch;
+      overflow: hidden;
     }
 
+    /* 👉 SOLO QUI CAMBIA LA POSIZIONE DELLA FOTO */
     .about-image {
       width: 100%;
-      height: 100%;
+      height: 110%;
       object-fit: cover;
       border-radius: 12px;
+
+      align-self: flex-end;
+      margin-top: auto;
     }
 
     /* =========================
@@ -193,6 +198,11 @@
         flex-direction: column;
       }
 
+      .about-image {
+        height: 120%;
+        margin-bottom: -0.5rem;
+      }
+
       footer {
         font-size: 1rem;
       }
@@ -221,7 +231,11 @@
         font-size: 0.9rem;
         min-height: 90px;
         width: 150px;
-        text-align: left;
+      }
+
+      .about-image {
+        height: 135%;
+        margin-bottom: -1rem;
       }
     }
   </style>
@@ -296,4 +310,3 @@
 
 </body>
 </html>
-
