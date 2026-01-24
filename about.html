@@ -91,7 +91,6 @@
       margin: 0 auto;
       display: flex;
       gap: 2rem;
-      align-items: flex-start;
       justify-content: center;
       flex-wrap: wrap;
     }
@@ -102,7 +101,9 @@
       gap: 1.2rem;
     }
 
-    /* TABS */
+    /* =========================
+       TABS
+       ========================= */
     .about-tabs {
       display: flex;
       flex-direction: column;
@@ -115,6 +116,7 @@
       cursor: pointer;
       background: #f2f2f2;
       font-weight: 600;
+      transition: background 0.3s ease;
     }
 
     .about-tab-btn.active {
@@ -122,14 +124,17 @@
       color: white;
     }
 
+    /* =========================
+       CARD CONTENUTI
+       ========================= */
     .about-tab-content-card {
-      background: #fff;
+      background: #f2f2f2;
       padding: 1.2rem;
-      border-radius: 12px;
+      border-radius: 18px;
       box-shadow: 0 6px 20px rgba(0,0,0,0.1);
       text-align: left;
       flex: 1;
-      min-height: 200px; /* mobile */
+      min-height: 200px;
     }
 
     .about-tab-content {
@@ -137,18 +142,29 @@
       line-height: 1.6;
     }
 
-    /* FOTO PROFILO */
+    /* =========================
+       FOTO PROFILO (CARD)
+       ========================= */
     .about-card-photo {
       flex: 0 1 300px;
+      background: #f2f2f2;
+      padding: 1rem;
+      border-radius: 18px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: stretch;
     }
 
     .about-image {
       width: 100%;
-      border-radius: 18px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+      height: 100%;
+      object-fit: cover;
+      border-radius: 12px;
     }
 
-    /* CONTATTI */
+    /* =========================
+       CONTATTI
+       ========================= */
     .contact-item {
       display: flex;
       align-items: center;
@@ -161,7 +177,9 @@
       height: 20px;
     }
 
-    /* FOOTER */
+    /* =========================
+       FOOTER
+       ========================= */
     footer {
       margin-top: 2rem;
       font-size: 1.1rem;
@@ -191,50 +209,33 @@
     }
 
     /* =========================
-       DESKTOP 
+       DESKTOP
        ========================= */
     @media (min-width: 769px) {
       .about-grid {
-       margin-top: 100px; 
-         align-items: stretch;
-      } 
-      
+        margin-top: 100px;
+        align-items: stretch;
+      }
+
       .about-tab-content-card {
-        min-height: 300px; 
+        min-height: 300px;
         flex: 1 1 400px;
       }
 
       .about-col-formazione-esperienza {
-    gap: 1.5rem; 
-  }
-      .about-tabs {
-    flex-direction: column;
-    gap: 0.5rem; 
-  }
+        gap: 1.5rem;
+      }
 
-  .about-tab-btn {
-    padding: 0.8rem 1rem; 
-    font-size: 0.9rem;     
-    min-height: 90px;     
-    width: 150px;          
-    text-align: left;      
-  }
-
-      .about-card-photo {
-    display: flex;
-    align-items: stretch;
-  }
-
-  .about-image {
-    height: 100%;
-    object-fit: cover; 
-  }
-
-      
+      .about-tab-btn {
+        padding: 0.8rem 1rem;
+        font-size: 0.9rem;
+        min-height: 90px;
+        width: 150px;
+        text-align: left;
+      }
     }
   </style>
 
-  
   <script src="about.js" defer></script>
 </head>
 
@@ -247,7 +248,6 @@
     <a href="works.html">My projects</a>
   </nav>
 
-  
   <!-- CONTENUTO -->
   <main class="main-content">
     <div class="about-grid">
@@ -310,4 +310,3 @@
 
 </body>
 </html>
-
