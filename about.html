@@ -218,25 +218,32 @@
         align-items: stretch;
       }
 
+      /* =========================
+         TABS + CARD aumentate del 10%
+         ========================= */
       .about-tab-content-card {
-        min-height: 300px;
-        flex: 1 1 400px;
+        min-height: 330px; /* +10% da 300 */
+        flex: 1 1 440px;   /* +10% da 400 */
       }
 
       .about-col-formazione-esperienza {
-        gap: 1.5rem;
+        gap: 1.65rem; /* +10% da 1.5rem */
       }
 
       .about-tab-btn {
-        padding: 0.8rem 1rem;
-        font-size: 0.9rem;
-        min-height: 90px;
-        width: 150px;
+        padding: 0.88rem 1.1rem; /* +10% circa */
+        font-size: 0.99rem;       /* +10% da 0.9rem */
+        min-height: 99px;         /* +10% da 90px */
+        width: 165px;             /* +10% da 150px */
+      }
+
+      .about-card-photo {
+        flex: 0 1 330px; /* +10% da 300px */
       }
 
       .about-image {
-        height: 108%;
-        object-position: bottom center; 
+        height: 105%; /* leggero zoom out */
+        object-position: bottom center; /* sempre in basso */
       }
     }
   </style>
