@@ -75,12 +75,6 @@
     /* =========================
        CONTENUTO ABOUT
        ========================= */
-    .about-title-handwritten {
-      margin: 2rem 0 1rem;
-      font-size: 3rem;
-      font-weight: 600;
-    }
-
     .main-content {
       flex: 1;
       padding: 2rem 1rem;
@@ -114,7 +108,7 @@
       padding: 0.6rem 1rem;
       border: none;
       cursor: pointer;
-      background: #f2f2f2;
+      background: #f8f7da;
       font-weight: 600;
       transition: background 0.3s ease;
     }
@@ -128,7 +122,7 @@
        CARD CONTENUTI
        ========================= */
     .about-tab-content-card {
-      background: #f2f2f2;
+      background: #f8f7da;
       padding: 1.2rem;
       border-radius: 18px;
       box-shadow: 0 6px 20px rgba(0,0,0,0.1);
@@ -147,7 +141,7 @@
        ========================= */
     .about-card-photo {
       flex: 0 1 300px;
-      background: #f2f2f2;
+      background: #f8f7da;
       padding: 1rem;
       border-radius: 18px;
       box-shadow: 0 6px 20px rgba(0,0,0,0.1);
@@ -195,10 +189,6 @@
         font-size: 1.2rem;
       }
 
-      .about-title-handwritten {
-        font-size: 2.2rem;
-      }
-
       .about-col-formazione-esperienza {
         flex-direction: column;
       }
@@ -241,18 +231,15 @@
 
 <body>
 
-  <!-- MENU -->
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html" class="active">About me</a>
     <a href="works.html">My projects</a>
   </nav>
 
-  <!-- CONTENUTO -->
   <main class="main-content">
     <div class="about-grid">
 
-      <!-- COLONNA TABS + CONTENUTI -->
       <div class="about-col-formazione-esperienza">
         <div class="about-tabs">
           <button class="about-tab-btn active" data-tab="formazione">Formazione</button>
@@ -296,7 +283,6 @@
         </div>
       </div>
 
-      <!-- COLONNA FOTO -->
       <div class="about-card-photo">
         <img src="risorse/profile.png" alt="Profile" class="about-image" />
       </div>
