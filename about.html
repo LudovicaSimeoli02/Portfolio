@@ -32,12 +32,12 @@
       justify-content: center;
       gap: 2rem;
       padding: 2rem 0;
-      background-color: #C9DBBA; /* 🌿 nuovo colore menu */
+      background-color: #f8f8f8;
     }
 
     nav a {
       text-decoration: none;
-      color: #2F2D2E;
+      color: #D4A89B;
       font-weight: 600;
       font-size: 1.5rem;
       position: relative;
@@ -245,4 +245,55 @@
           <button class="about-tab-btn active" data-tab="formazione">Formazione</button>
           <button class="about-tab-btn" data-tab="esperienza">Esperienza</button>
           <button class="about-tab-btn" data-tab="interessi">Interessi</button>
-          <button class="about-tab-b
+          <button class="about-tab-btn" data-tab="contatti">Contatti</button>
+        </div>
+
+        <div class="about-tab-content-card">
+          <div class="about-tab-content" data-tab-content="formazione">
+            <ul>
+              <li>Diploma Liceo Classico</li>
+              <li><b>Laurea triennale in Storia e Tutela dei Beni Artistici</b> – Università di Firenze</li>
+              <li><b>Laurea magistrale in Informatica Umanistica</b> – Università di Pisa</li>
+            </ul>
+          </div>
+
+          <div class="about-tab-content" data-tab-content="esperienza" style="display:none;">
+            <ul>
+              <li>Progettazione e sviluppo web/mobile</li>
+              <li>Modellazione e rendering 3D</li>
+              <li>UX & Interaction Design</li>
+            </ul>
+          </div>
+
+          <div class="about-tab-content" data-tab-content="interessi" style="display:none;">
+            Interesse per l’integrazione tra <b>arte, tecnologia e usabilità</b>,
+            con focus su AR/VR e beni culturali.
+          </div>
+
+          <div class="about-tab-content" data-tab-content="contatti" style="display:none;">
+            <div class="contact-item">
+              <img src="risorse/position.png" class="icon-contact" />
+              <span>Pisa, Italia</span>
+            </div>
+            <div class="contact-item">
+              <img src="risorse/email.png" class="icon-contact" />
+              <span>simeoliludovica@gmail.com</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-card-photo">
+        <img src="risorse/profile.png" alt="Profile" class="about-image" />
+      </div>
+
+    </div>
+
+    <footer>
+      <p>&copy; 2025 - Ludovica Simeoli</p>
+    </footer>
+  </main>
+
+</body>
+</html>
+
