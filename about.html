@@ -112,7 +112,7 @@
       font-weight: 600;
       text-align: left;
       transition: background 0.3s ease;
-      border-radius: 12px;
+      border-radius: 12px; /* smussatura */
     }
 
     .about-tab-btn.active {
@@ -219,27 +219,28 @@
         align-items: stretch;
       }
 
-      /* CARD centrale più larga (orizzontale) */
-      .about-tab-content-card {
-        flex: 1 1 700px; /* più larga */
-        min-height: 350px;
-        font-size: 1.05rem; /* leggermente più grande */
-      }
-
+      /* rendiamo il contenitore centrale più largo */
       .about-col-formazione-esperienza {
-        gap: 2rem; /* più spazio tra colonne */
+        flex: 1 1 800px; /* più largo */
+        gap: 2rem;
       }
 
-      /* BOTTONI più grandi e angoli più smussati */
+      /* la card centrale occupa tutto lo spazio disponibile */
+      .about-tab-content-card {
+        flex: 1;
+        min-height: 350px;
+        font-size: 1.05rem;
+      }
+
       .about-tab-btn {
         padding: 1rem 1.2rem; 
         font-size: 1.05rem;       
         min-height: 110px;         
         width: 180px;             
-        border-radius: 16px; 
+        border-radius: 16px;
       }
 
-      /* CARD FOTO più larga + zoom out */
+      /* CARD FOTO leggermente più larga + zoom out */
       .about-card-photo {
         flex: 0 1 400px; 
       }
@@ -321,4 +322,3 @@
 
 </body>
 </html>
-
