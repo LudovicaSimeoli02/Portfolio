@@ -156,9 +156,9 @@
        ========================= */
     .about-image {
       width: 100%;
-      height: 120%; /* più alta della card per effetto zoom out */
+      height: 120%; /* mobile */
       object-fit: cover;
-      object-position: bottom center; /* più in basso */
+      object-position: bottom center; /* sempre attaccata al fondo */
       border-radius: 12px;
     }
 
@@ -204,7 +204,7 @@
       }
 
       .about-image {
-        height: 120%; /* più grande e più in basso */
+        height: 120%; /* più grande e più in basso su mobile */
         object-position: bottom center;
       }
     }
@@ -235,8 +235,8 @@
       }
 
       .about-image {
-        height: 120%; /* più grande */
-        object-position: bottom center; /* più in basso */
+        height: 105%; /* leggero zoom out su desktop */
+        object-position: bottom center; /* sempre in basso */
       }
     }
   </style>
