@@ -87,7 +87,6 @@
       gap: 2rem;
       justify-content: center;
       flex-wrap: wrap;
-      align-items: flex-start;
     }
 
     .about-col-formazione-esperienza {
@@ -217,30 +216,30 @@
     @media (min-width: 769px) {
       .about-grid {
         margin-top: 100px;
+        align-items: stretch;
       }
 
-      /* Card centrale più larga */
+      /* CARD centrale più larga (orizzontale) */
       .about-tab-content-card {
-        flex: 1 1 650px; /* aumentata larghezza */
         min-height: 330px;
+        flex: 1 1 520px; /* aumentata larghezza */
       }
 
       .about-col-formazione-esperienza {
         gap: 1.7rem;
       }
 
-      /* Bottoni leggermente più grandi e angoli smussati */
       .about-tab-btn {
         padding: 0.88rem 1.1rem; 
         font-size: 0.99rem;       
         min-height: 99px;         
         width: 165px;             
-        border-radius: 14px; /* angoli più smussati */
+        border-radius: 12px;
       }
 
-      /* Card foto leggermente più larga + leggero zoom out */
+      /* CARD FOTO leggermente più larga + zoom out */
       .about-card-photo {
-        flex: 0 1 380px; 
+        flex: 0 1 360px; 
       }
 
       .about-image {
