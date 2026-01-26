@@ -40,7 +40,6 @@
       color: #D4A89B;
       font-weight: 600;
       font-size: 1.5rem;
-      position: relative;
     }
 
     nav a.active {
@@ -62,7 +61,7 @@
        CONTENUTO
        ========================= */
     .about-grid {
-      max-width: 1200px;
+      max-width: 1400px;
       margin: 0 auto;
       display: flex;
       gap: 2rem;
@@ -71,7 +70,7 @@
 
     .about-col-formazione-esperienza {
       display: flex;
-      gap: 1.2rem;
+      gap: 1.5rem;
     }
 
     /* =========================
@@ -81,7 +80,7 @@
       display: flex;
       flex-direction: column;
       gap: 0.5rem;
-      width: 180px;
+      width: 190px;
       flex-shrink: 0;
     }
 
@@ -92,7 +91,7 @@
       background: #f4ebef;
       font-weight: 600;
       text-align: left;
-      border-radius: 12px;
+      border-radius: 14px;
       min-height: 90px;
     }
 
@@ -102,13 +101,13 @@
     }
 
     /* =========================
-       CARD CONTENUTI
+       CARD CONTENUTI (CENTRALE)
        ========================= */
     .about-tab-content-card {
-      width: 420px;
+      width: 520px;               /* 🔥 PIÙ LARGO SEMPRE */
       background: #f4ebef;
-      padding: 1.2rem;
-      border-radius: 18px;
+      padding: 1.4rem;
+      border-radius: 20px;
       box-shadow: 0 6px 20px rgba(0,0,0,0.1);
       text-align: left;
       flex-shrink: 0;
@@ -116,24 +115,23 @@
     }
 
     .about-tab-content {
+      width: 100%;
       font-size: 1rem;
       line-height: 1.6;
       overflow-y: auto;
-      width: 100%;
     }
 
     /* =========================
        FOTO PROFILO
        ========================= */
     .about-card-photo {
-      width: 400px;
+      width: 380px;
       background: #f4ebef;
       padding: 1rem;
-      border-radius: 18px;
+      border-radius: 20px;
       box-shadow: 0 6px 20px rgba(0,0,0,0.1);
       flex-shrink: 0;
       display: flex;
-      align-items: stretch;
       overflow: hidden;
     }
 
@@ -141,7 +139,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      border-radius: 12px;
+      border-radius: 14px;
     }
 
     /* =========================
@@ -167,7 +165,7 @@
       .about-col-formazione-esperienza,
       .about-tab-content-card,
       .about-card-photo {
-        height: 420px; /* 🔒 ALTEZZA UNICA */
+        height: 440px;          /* 🔒 STESSA ALTEZZA */
       }
 
       .about-tabs {
@@ -235,7 +233,7 @@
             <ul>
               <li>Progettazione web</li>
               <li>UX & Interaction Design</li>
-              <li>3D & XR</li>
+              <li>3D / XR</li>
             </ul>
           </div>
 
@@ -244,7 +242,7 @@
           </div>
 
           <div class="about-tab-content" data-tab-content="contatti" style="display:none;">
-            Pisa, Italia<br />
+            Pisa, Italia<br>
             simeoliludovica@gmail.com
           </div>
         </div>
