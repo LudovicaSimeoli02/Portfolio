@@ -61,7 +61,7 @@
        CONTENUTO
        ========================= */
     .about-grid {
-      max-width: 1600px;      /* 🔥 più spazio orizzontale */
+      max-width: 1600px;
       margin: 0 auto;
       display: flex;
       gap: 2.5rem;
@@ -104,7 +104,7 @@
        CARD CONTENUTI (CENTRALE)
        ========================= */
     .about-tab-content-card {
-      width: 680px;            /* 🔥🔥 DIV CENTRALE MOLTO PIÙ LARGO */
+      width: 680px;
       background: #f4ebef;
       padding: 1.6rem;
       border-radius: 22px;
@@ -125,7 +125,7 @@
        FOTO PROFILO
        ========================= */
     .about-card-photo {
-      width: 340px;            /* leggermente più compatta */
+      width: 340px;
       background: #f4ebef;
       padding: 1rem;
       border-radius: 22px;
@@ -153,19 +153,23 @@
     }
 
     /* =========================
-       DESKTOP: ALTEZZA UNICA
+       DESKTOP: ALTEZZA UNICA + spostamento leggero a destra
        ========================= */
     @media (min-width: 769px) {
       .about-grid {
         margin-top: 100px;
         align-items: stretch;
         flex-wrap: nowrap;
+
+        /* 🔹 sposta leggermente tutto a destra */
+        margin-left: 50px;
+        justify-content: flex-start;
       }
 
       .about-col-formazione-esperienza,
       .about-tab-content-card,
       .about-card-photo {
-        height: 460px;          /* 🔒 altezza unica */
+        height: 460px;          /* altezza unica */
       }
 
       .about-tabs {
