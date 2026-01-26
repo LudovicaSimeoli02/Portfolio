@@ -32,7 +32,7 @@
       justify-content: center;
       gap: 2rem;
       padding: 2rem 0;
-      background-color: #C9DBBA;
+      background-color: #f8f8f8;
     }
 
     nav a {
@@ -73,13 +73,18 @@
     }
 
     /* =========================
-       CONTENUTO
+       MAIN
        ========================= */
     .main-content {
       flex: 1;
       padding: 2rem 1rem;
+      display: flex;
+      flex-direction: column;
     }
 
+    /* =========================
+       CONTENUTO
+       ========================= */
     .about-grid {
       max-width: 1200px;
       margin: 0 auto;
@@ -112,7 +117,7 @@
       font-weight: 600;
       text-align: left;
       transition: background 0.3s ease;
-      border-radius: 12px; /* smussatura */
+      border-radius: 12px;
     }
 
     .about-tab-btn.active {
@@ -139,7 +144,7 @@
     }
 
     /* =========================
-       FOTO PROFILO (CARD)
+       FOTO PROFILO
        ========================= */
     .about-card-photo {
       flex: 0 1 300px;
@@ -152,9 +157,6 @@
       overflow: hidden;
     }
 
-    /* =========================
-       POSIZIONE FOTO
-       ========================= */
     .about-image {
       width: 100%;
       height: 120%;
@@ -179,13 +181,13 @@
     }
 
     /* =========================
-       FOOTER
+       FOOTER (sticky)
        ========================= */
     footer {
-      margin-bottom: -10rem;
+      margin-top: auto;
+      padding: 2rem 0 1rem;
       font-size: 1.1rem;
       color: #2F2D2E;
-      
     }
 
     /* =========================
@@ -205,8 +207,7 @@
       }
 
       .about-image {
-        height: 120%; 
-        object-position: bottom center;
+        height: 120%;
       }
     }
 
@@ -219,13 +220,11 @@
         align-items: stretch;
       }
 
-     
       .about-col-formazione-esperienza {
-        flex: 1 1 700px; /* più largo */
+        flex: 1 1 700px;
         gap: 2rem;
       }
 
-      /* la card centrale occupa tutto lo spazio disponibile */
       .about-tab-content-card {
         flex: 1;
         min-height: 350px;
@@ -233,21 +232,19 @@
       }
 
       .about-tab-btn {
-        padding: 1rem 1.2rem; 
-        font-size: 1.05rem;       
-        min-height: 110px;         
-        width: 180px;             
+        padding: 1rem 1.2rem;
+        font-size: 1.05rem;
+        min-height: 110px;
+        width: 180px;
         border-radius: 16px;
       }
 
-      /* CARD FOTO leggermente più larga + zoom out */
       .about-card-photo {
-        flex: 0 1 400px; 
+        flex: 0 1 400px;
       }
 
       .about-image {
-        height: 110%; 
-        object-position: bottom center;
+        height: 110%;
       }
     }
   </style>
