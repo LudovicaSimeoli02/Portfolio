@@ -214,37 +214,24 @@ nav a.active::after {
     /* =========================
        MOBILE
        ========================= */
-    @media (max-width: 768px) {
+   @media (max-width: 768px) {
   .about-grid {
-    flex-direction: column;
-    left: 0;
-    transform: none;
+    flex-direction: column; /* tutto in verticale */
     align-items: center;
+    gap: 1.5rem;
+    transform: none;
   }
 
-  .about-col-formazione-esperienza {
-    flex-direction: row; 
-    gap: 1rem; 
-    align-items: flex-start;
-  }
-
-  .about-tabs {
-    flex-direction: column;
-    width: 120px; 
-    gap: 0.5rem;
-  }
-
-  .about-tab-btn {
-    min-height: 60px; 
-    font-size: 1rem; 
-    padding: 0.5rem;
-  }
-
+  /* Foto sotto il menu */
   .about-card-photo {
-    width: 120px; 
-    height: 120px; 
+    width: 150px;      /* ridotta per mobile */
+    height: 150px;
     padding: 0.5rem;
-    align-items: flex-end;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;  /* foto centrata verticalmente nella card */
+    justify-content: center; 
+    margin-bottom: 1rem;
   }
 
   .about-image {
@@ -254,17 +241,44 @@ nav a.active::after {
     border-radius: 12px;
   }
 
+  /* Bottoni in riga */
+  .about-col-formazione-esperienza {
+    flex-direction: column; /* contenitore verticale */
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .about-tabs {
+    display: flex;           /* bottoni in riga */
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.5rem;
+    width: auto;
+  }
+
+  .about-tab-btn {
+    min-height: 50px;       /* bottoni più corti */
+    padding: 0.5rem 0.8rem;
+    font-size: 1rem;
+    flex: 1;                /* bottoni della stessa larghezza */
+    text-align: center;
+  }
+
+  /* Contenuto della tab sotto */
   .about-tab-content-card {
-    width: calc(120px + 120px + 1rem); 
-    margin-top: 1rem; 
+    width: calc(100% - 2rem); /* largo quanto possibile */
+    max-width: 400px;          /* massimo 400px */
+    margin-top: 1rem;
     padding: 1rem;
-    font-size: 1rem; 
+    font-size: 1rem;
   }
 
   nav a {
     font-size: 1.2rem;
   }
 }
+
   </style>
 
   <script src="about.js" defer></script>
