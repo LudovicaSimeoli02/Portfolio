@@ -7,7 +7,7 @@
 
   <style>
     /* =========================
-       RESET & BASE
+       GENERALE
        ========================= */
     * {
       margin: 0;
@@ -25,7 +25,7 @@
     }
 
     /* =========================
-       MENU
+       MENU 
        ========================= */
     nav {
       display: flex;
@@ -48,30 +48,29 @@
     }
 
     /* =========================
-       MAIN / FOOTER PUSH
+       MAIN
        ========================= */
     .main-content {
       flex: 1;
-      min-height: calc(100vh - 120px);
       padding: 2rem 1rem;
       display: flex;
       flex-direction: column;
     }
 
     /* =========================
-       GRID PRINCIPALE
+       CONTENUTO
        ========================= */
     .about-grid {
       display: flex;
       gap: 2.5rem;
-      justify-content: center;
-      align-items: stretch;
-      margin: auto;
+      flex-wrap: nowrap;
+      position: relative;          
+      align-items: stretch;       
     }
 
     .about-col-formazione-esperienza {
       display: flex;
-      gap: 2.5rem;
+      gap: 1.5rem;
     }
 
     /* =========================
@@ -80,41 +79,43 @@
     .about-tabs {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      gap: 0.5rem;
       width: 190px;
       flex-shrink: 0;
     }
 
-    .about-tab-btn {
-      min-height: 90px;
-      padding: 1rem;
-      border: none;
-      cursor: pointer;
-      background: #f4ebef;
-      font-weight: 600;
-      font-size: 1.25rem;
-      border-radius: 14px;
+  .about-tab-btn {
+  padding: 1rem;
+  border: none;
+  cursor: pointer;
+  background: #f4ebef;
+  font-weight: 600;
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
+  font-size: 1.25rem;     
+  text-align: center;      
+
+  border-radius: 14px;
+  min-height: 90px;
+
+  display: flex;           
+  align-items: center;     
+  justify-content: center; 
+}
 
     .about-tab-btn.active {
       background: #D68C45;
       color: white;
     }
 
-    /* =========================
-       CARD CONTENUTO
-       ========================= */
+    
     .about-tab-content-card {
-      width: 700px;
+      width: 700px;             
       background: #f4ebef;
       padding: 1.6rem;
       border-radius: 22px;
       box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      text-align: left;
+      flex-shrink: 0;
       display: flex;
     }
 
@@ -123,11 +124,10 @@
       font-size: 1.25rem;
       line-height: 1.7;
       overflow-y: auto;
-      text-align: left;
     }
 
     /* =========================
-       CARD FOTO
+       FOTO PROFILO
        ========================= */
     .about-card-photo {
       width: 340px;
@@ -135,13 +135,15 @@
       padding: 1rem;
       border-radius: 22px;
       box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      flex-shrink: 0;
       display: flex;
-      align-items: flex-end; /* 👈 foto in basso */
+      align-items: flex-end;
+      overflow: hidden;
     }
 
     .about-image {
       width: 100%;
-      height: auto;           /* 🔑 permette lo spostamento */
+      height: 100%;
       object-fit: cover;
       border-radius: 16px;
     }
@@ -151,7 +153,7 @@
        ========================= */
     footer {
       margin-top: auto;
-      padding: 2rem 0 1rem;
+      padding: 0 0 0 0;
       font-size: 1.1rem;
       color: #2F2D2E;
     }
@@ -160,25 +162,39 @@
        DESKTOP
        ========================= */
     @media (min-width: 769px) {
-      .about-tabs,
-      .about-tab-content-card,
-      .about-card-photo {
-        height: 460px;
-      }
-    }
+  .about-col-formazione-esperienza,
+  .about-tab-content-card,
+  .about-card-photo {
+    height: 460px;
+  }
 
+  .about-grid {
+    margin-left: auto;
+    margin-right: auto;      
+    transform: translateX(-170px);
+    transform: translateY(100px);
+    gap: 2.5rem;
+  }
+      .about-col-formazione-esperienza {
+    gap: 2.5rem;                 
+  }
+
+  .about-tabs {
+    justify-content: space-between;
+  }
+}
     /* =========================
        MOBILE
        ========================= */
     @media (max-width: 768px) {
       .about-grid {
         flex-direction: column;
-        gap: 2rem;
+        left: 0;
+        transform: none;
       }
 
       .about-col-formazione-esperienza {
         flex-direction: column;
-        gap: 1.5rem;
       }
 
       .about-tabs,
