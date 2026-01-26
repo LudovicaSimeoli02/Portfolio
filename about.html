@@ -52,9 +52,12 @@
        ========================= */
     .main-content {
       flex: 1;
-      padding: 2rem 1rem;
       display: flex;
+      justify-content: center; /* centramento orizzontale */
+      align-items: center;     /* centramento verticale */
+      padding: 2rem 1rem;
       flex-direction: column;
+      text-align: center;
     }
 
     /* =========================
@@ -64,17 +67,13 @@
       display: flex;
       gap: 2.5rem;
       flex-wrap: nowrap;
-
-      position: relative;          /* necessario per translateX */
-      left: 50%;                   /* sposta il blocco a metà pagina */
-      transform: translateX(-50%); /* centratura precisa orizzontale */
-
-      align-items: stretch;        /* altezza uniforme */
+      align-items: stretch; /* altezza uniforme */
     }
 
     .about-col-formazione-esperienza {
       display: flex;
       gap: 1.5rem;
+      flex-direction: column;
     }
 
     /* =========================
@@ -163,7 +162,7 @@
       .about-col-formazione-esperienza,
       .about-tab-content-card,
       .about-card-photo {
-        height: 460px;          /* altezza unica */
+        height: 460px; /* altezza unica */
       }
 
       .about-tabs {
@@ -177,8 +176,6 @@
     @media (max-width: 768px) {
       .about-grid {
         flex-direction: column;
-        left: 0;
-        transform: none;
       }
 
       .about-col-formazione-esperienza {
