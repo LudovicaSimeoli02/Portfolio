@@ -214,22 +214,23 @@ nav a.active::after {
     /* =========================
        MOBILE
        ========================= */
-   @media (max-width: 768px) {
+  @media (max-width: 768px) {
+  /* GRID principale */
   .about-grid {
-    flex-direction: column; /* tutto in verticale */
+    flex-direction: column;
     align-items: center;
-    gap: 1.5rem;
+    gap: 1rem;
     transform: none;
   }
 
-  /* Foto sotto il menu */
+  /* FOTO sotto il menu */
   .about-card-photo {
-    width: 150px;      /* ridotta per mobile */
+    width: 150px;
     height: 150px;
     padding: 0.5rem;
     border-radius: 16px;
     display: flex;
-    align-items: center;  /* foto centrata verticalmente nella card */
+    align-items: center;  
     justify-content: center; 
     margin-bottom: 1rem;
   }
@@ -241,16 +242,17 @@ nav a.active::after {
     border-radius: 12px;
   }
 
-  /* Bottoni in riga */
+  /* COLONNA FORM + CONTENUTI */
   .about-col-formazione-esperienza {
-    flex-direction: column; /* contenitore verticale */
+    flex-direction: column;
     align-items: center;
-    gap: 1rem;
-    width: 100%;
+    gap: 0.5rem;
+    width: auto;
   }
 
+  /* SOLO 3 TASTI IN RIGA */
   .about-tabs {
-    display: flex;           /* bottoni in riga */
+    display: flex;
     flex-direction: row;
     justify-content: center;
     gap: 0.5rem;
@@ -258,26 +260,30 @@ nav a.active::after {
   }
 
   .about-tab-btn {
-    min-height: 50px;       /* bottoni più corti */
+    min-height: 50px;       /* più corti */
     padding: 0.5rem 0.8rem;
-    font-size: 1rem;
-    flex: 1;                /* bottoni della stessa larghezza */
+    font-size: 1rem;        /* più piccolo */
+    flex: 1;                /* uguale larghezza */
     text-align: center;
   }
 
-  /* Contenuto della tab sotto */
+  /* CONTENUTO DELLA TAB */
   .about-tab-content-card {
-    width: calc(100% - 2rem); /* largo quanto possibile */
-    max-width: 400px;          /* massimo 400px */
-    margin-top: 1rem;
-    padding: 1rem;
-    font-size: 1rem;
+    width: calc(100% - 2rem); /* largo quanto i bottoni */
+    max-width: 360px;
+    height: 200px;            /* altezza fissa */
+    margin-top: 0.5rem;
+    padding: 0.8rem;
+    font-size: 0.9rem;        /* scritte più piccole */
+    overflow-y: auto;         /* scroll se troppo testo */
   }
 
+  /* Menu mobile più piccolo */
   nav a {
     font-size: 1.2rem;
   }
 }
+
 
   </style>
 
