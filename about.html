@@ -61,13 +61,15 @@
        CONTENUTO
        ========================= */
     .about-grid {
-      max-width: 1600px;
       display: flex;
       gap: 2.5rem;
       flex-wrap: nowrap;
 
-      /* 🔹 centratura verticale interna */
-      align-items: stretch;
+      position: relative;          /* necessario per translateX */
+      left: 50%;                   /* sposta il blocco a metà pagina */
+      transform: translateX(-50%); /* centratura precisa orizzontale */
+
+      align-items: stretch;        /* altezza uniforme */
     }
 
     .about-col-formazione-esperienza {
@@ -106,7 +108,7 @@
        CARD CONTENUTI (CENTRALE)
        ========================= */
     .about-tab-content-card {
-      width: 700px;             /* div centrale più largo */
+      width: 700px;             
       background: #f4ebef;
       padding: 1.6rem;
       border-radius: 22px;
@@ -158,15 +160,6 @@
        DESKTOP
        ========================= */
     @media (min-width: 769px) {
-      .about-grid {
-        /* 🔹 spostamento più a destra e più in basso */
-        margin-left: 100px;
-        margin-top: 120px;
-
-        justify-content: flex-start; /* mantiene l’ordine orizzontale */
-        align-items: stretch;
-      }
-
       .about-col-formazione-esperienza,
       .about-tab-content-card,
       .about-card-photo {
@@ -184,6 +177,8 @@
     @media (max-width: 768px) {
       .about-grid {
         flex-direction: column;
+        left: 0;
+        transform: none;
       }
 
       .about-col-formazione-esperienza {
