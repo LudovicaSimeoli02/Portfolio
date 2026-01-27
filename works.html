@@ -271,57 +271,41 @@ cards.forEach(card => {
     const label = card.querySelector('.polaroid-label').textContent.trim();
     detail.style.display = 'flex';
     detail.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    if (label === 'Siti') {
-      detailContent.innerHTML = `
-      <h2 style="font-family: 'Indie Flower', cursive; color: #2C5F2D; font-size: 2.2rem; margin-bottom: 1.5rem;"> Siti Web</h2>
-      <span style="display: block;  
-             margin-left: 0rem; 
-             font-family: 'Quicksand', sans-serif; 
-             font-size: 1.1rem; 
-             color: #2C5F2D; 
-             font-weight: bold; 
-             text-align: left; 
-             width: 500px;
-             padding: 0.1em 0.4em;"> Sito Andrea Palladio Architetto</span>
-        <p style="font-family: 'Quicksand', sans-serif; color: #2C5F2D; font-size: 1.05rem; margin-bottom: 1.5rem; margin-left: 0rem; text-align: left;"> Sito onepage sulla vita e le opere del Palladio: interazione di video, mappe, pagine esterne e elementi aggiuntivi da scaricare (HTML e CSS) </p>
-        <div style="display: flex; gap: 0.7rem; justify-content: center; align-items: flex-start; margin-bottom: 2.2rem; flex-wrap: wrap;">
-          <img src='risorse/siti/palladio1.png' alt='Palladio 1' style='height: 320px; width: 100%; max-width: 340px; border-radius: 12px 0 0 12px; margin: 0; display: block; object-fit: contain; background: #fff; border: 1px solid #111;'>
-          <img src='risorse/siti/palladio2.png' alt='Palladio 2' style='height: 320px; width: 100%; max-width: 340px; margin: 0; display: block; object-fit: contain; background: #fff; border: 1px solid #111;'>
-          <img src='risorse/siti/palladio3.png' alt='Palladio 3' style='height: 320px; width: 100%; max-width: 340px; border-radius: 0 12px 12px 0; margin: 0; display: block; object-fit: contain; background: #fff; border: 1px solid #111;'>
-        </div>
-        
-        <span style="display: block;  
-             margin-left: 0rem; 
-             font-family: 'Quicksand', sans-serif; 
-             font-size: 1.1rem; 
-             color: #2C5F2D; 
-             font-weight: bold; 
-             text-align: left; 
-             width: 500px;
-             padding: 0.1em 0.4em;">Sito ditta di spedizione pacchi </span>
-        <p style="font-family: 'Quicksand', sans-serif; color: #2C5F2D; font-size: 1.05rem; margin-bottom: 1.5rem; margin-left: 0rem; text-align: left;"> Sito multipage - homepage / attivtà di selezione dimensioni pacco da spedire / form di dati e pagamento. (HTML e CSS) </p>
-        <div style="display: flex; gap: 0.7rem; justify-content: center; align-items: flex-start; margin-bottom: 2.2rem; flex-wrap: wrap;">
-          <img src='risorse/siti/responsive1.jpeg' alt='Responsive 1' style='height: 320px; width: 100%; max-width: 340px; border-radius: 12px 0 0 12px; margin: 0; display: block; object-fit: contain; background: #fff; border: 1px solid #111;'>
-          <img src='risorse/siti/responsive2.png' alt='Responsive 2' style='height: 320px; width: 100%; max-width: 340px; margin: 0; display: block; object-fit: contain; background: #fff; border: 1px solid #111;'>
-          <img src='risorse/siti/responsive3.jpeg' alt='Responsive 3' style='height: 320px; width: 100%; max-width: 340px; border-radius: 0 12px 12px 0; margin: 0; display: block; object-fit: contain; background: #fff; border: 1px solid #111;'>
-        </div>
+   if (label === 'Siti') {
+  detailContent.innerHTML = `
+    <div style="text-align: left; margin-left: 2rem; max-width: 900px;">
+      <h2 style="font-family: 'Indie Flower', cursive; color: #2C5F2D; font-size: 2.2rem; margin-bottom: 1.5rem;">Siti Web</h2>
+      
+      <span style="display: block; font-family: 'Quicksand', sans-serif; font-size: 1.1rem; color: #2C5F2D; font-weight: bold; margin-bottom: 0.2rem;">
+        Sito Andrea Palladio Architetto
+      </span>
+      <p style="font-family: 'Quicksand', sans-serif; color: #2C5F2D; font-size: 1.05rem; margin-bottom: 1.5rem;">
+        Sito onepage sulla vita e le opere del Palladio: interazione di video, mappe, pagine esterne e elementi aggiuntivi da scaricare (HTML e CSS)
+      </p>
+      
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2rem;">
+        <img src='risorse/siti/palladio1.png' alt='Palladio 1' style='height: auto; width: 100%; max-width: 400px; border-radius: 12px 0 0 12px; object-fit: cover;'>
+        <img src='risorse/siti/palladio2.png' alt='Palladio 2' style='height: auto; width: 100%; max-width: 400px; object-fit: cover;'>
+        <img src='risorse/siti/palladio3.png' alt='Palladio 3' style='height: auto; width: 100%; max-width: 400px; border-radius: 0 12px 12px 0; object-fit: cover;'>
+      </div>
+      
+      <span style="display: block; font-family: 'Quicksand', sans-serif; font-size: 1.1rem; color: #2C5F2D; font-weight: bold; margin-bottom: 0.2rem;">
+        Sito ditta di spedizione pacchi
+      </span>
+      <p style="font-family: 'Quicksand', sans-serif; color: #2C5F2D; font-size: 1.05rem; margin-bottom: 1.5rem;">
+        Sito multipage - homepage / attività di selezione dimensioni pacco da spedire / form di dati e pagamento (HTML e CSS)
+      </p>
+      
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2rem;">
+        <img src='risorse/siti/responsive1.jpeg' alt='Responsive 1' style='height: auto; width: 100%; max-width: 400px; border-radius: 12px 0 0 12px; object-fit: cover;'>
+        <img src='risorse/siti/responsive2.png' alt='Responsive 2' style='height: auto; width: 100%; max-width: 400px; object-fit: cover;'>
+        <img src='risorse/siti/responsive3.jpeg' alt='Responsive 3' style='height: auto; width: 100%; max-width: 400px; border-radius: 0 12px 12px 0; object-fit: cover;'>
+      </div>
+    </div>
 
-         <span style="display: block;  
-             margin-left: 0rem; 
-             font-family: 'Quicksand', sans-serif; 
-             font-size: 1.1rem; 
-             color: #2C5F2D; 
-             font-weight: bold; 
-             text-align: left; 
-             width: 500px;
-             padding: 0.1em 0.4em;">
-         Sito ditta di spezione pacchi (altra versione) </span>
-        <p style="font-family: 'Quicksand', sans-serif; color: #2C5F2D; font-size: 1.05rem; margin-left: 0rem; margin-bottom: 1.5rem; text-align:left;"> Sito onepage di preventivo personalizzato per spedizione pacchi e creazione di etichetta (HTML, CSS e JavaScript) </p>
-        <div style="display: flex; justify-content: center; align-items: center; width: 100%;">
-          <img src='risorse/siti/spedizioni.jpeg' alt='Sito spedizioni seconda versione' style='max-width: 600px; width: 100%; height: 650px; border-radius: 16px; margin: 0 auto; display: block; object-fit: cover; border: 1px solid #111; background: #fff;'>
-        </div>
-      `;
-    } else if (label === 'Elementi 3D') {
+    
+  `;
+} else if (label === 'Elementi 3D') {
       detailContent.innerHTML = `
       <h2 style="font-family: 'Indie Flower', cursive; color: #2C5F2D; font-size: 2.2rem; margin-bottom: 1.5rem;"> Elementi 3D </h2>
           <span style='display: block; margin-bottom: 0.2rem; margin-left: 2rem; font-family: "Quicksand", sans-serif; font-size: 1.1rem; color: #2C5F2D; font-weight: bold; text-align: left; width: 500px; background: linear-gradient(90deg, #FFE066 60%, transparent 100%); border-radius: 6px; padding: 0.1em 0.4em;'>Statua di Giovanni Cei </span>
