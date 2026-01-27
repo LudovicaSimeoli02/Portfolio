@@ -263,21 +263,68 @@
 
     
     
-
+ /* Mobile*/
     @media (max-width: 768px) {
-  .polaroid-row {
-    flex-direction: column;
-    align-items: center;
+      
+  nav a {
+    font-size: 1.2rem;
   }
 
-  .polaroid-card {
-    width: 70%;
-    max-width: 250px;
+  footer {
+    font-size: 1rem;
   }
 
-  .polaroid-img {
+  /* ======================
+     WORK SECTION MOBILE
+     ====================== */
+  .work-section {
+    padding: 1rem; /* margine interno ridotto */
+  }
+
+  .work-title {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .work-subtitle {
+    font-size: 1rem;
+    text-align: left;
+    margin-bottom: 0.3rem;
+  }
+
+  .work-description {
+    font-size: 0.95rem;
+    text-align: left;
+    margin-bottom: 0.8rem;
+  }
+
+  .slideshow-container {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 0.5rem;
+  }
+
+  .slideshow-container video {
     width: 100%;
     height: auto;
+    border-radius: 12px;
+    border: 1px solid #111;
+    box-shadow: 0 2px 10px #E18AD433;
+  }
+
+  /* BOTTONI */
+  .work-section div > a {
+    font-size: 1rem;
+    padding: 0.5em 1.2em; /* bottone un po' più grande in mobile */
+    margin-left: 0;       /* rimuoviamo spazi eccessivi */
+    margin-top: 0.2rem;   /* vicinissimo al video */
+    display: inline-block;
+  }
+
+  /* Spaziatura tra blocchi di contenuto */
+  .work-section > div {
+    margin-bottom: 2rem; 
   }
 }
 
