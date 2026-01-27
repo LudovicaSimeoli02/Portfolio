@@ -285,15 +285,19 @@
     width: 45%;       
     max-width: 150px; 
     padding: 0.6rem 0.6rem 1rem 0.6rem;
-        margin-bottom: 1rem;
-  }
- .polaroid-row:first-child .polaroid-card:nth-child(3) {
-    flex-basis: 100%;  /* spinge la 3ª card da sola sulla riga */
-    max-width: 150px;
-    margin-left: auto;
-    margin-right: auto;
+     margin-bottom: 1rem;
   }
       
+.polaroid-row:first-child .polaroid-card:nth-child(1) { order: 1; }
+.polaroid-row:first-child .polaroid-card:nth-child(2) { order: 2; }
+.polaroid-row:first-child .polaroid-card:nth-child(3) { 
+  order: 3; 
+  flex-basis: 100%;   /* forza nuova riga */
+  margin-left: auto;
+  margin-right: auto;
+}
+.polaroid-row:last-child .polaroid-card:nth-child(1) { order: 4; }
+.polaroid-row:last-child .polaroid-card:nth-child(2) { order: 5; }
       
 
       
