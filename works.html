@@ -4,58 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio - Ludovica Simeoli</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <aside class="sidebar">
-    
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About me</a>
-      <a href="works.html" class="active">My projects</a>
-    </nav>
-  </aside>
-  <main class="main-content">
-    <section id="works">
-      <div class="polaroid-gallery polaroid-centered">
-        <div class="polaroid-row">
-          <div class="polaroid-card">
-            <img src="risorse/worldwide.png" alt="Siti" class="polaroid-img" />
-            <div class="polaroid-label">Siti</div>
-          </div>
-          <div class="polaroid-card">
-            <img src="risorse/prodottigrafici.png" alt="Prodotti Grafici" class="polaroid-img" />
-            <div class="polaroid-label">Prodotti Grafici</div>
-          </div>
-          <div class="polaroid-card">
-            <img src="risorse/vr.png" alt="Ambienti Virtuali" class="polaroid-img" />
-            <div class="polaroid-label">Ambienti Virtuali</div>
-          </div>
-        </div>
-        <div class="polaroid-row">
-          <div class="polaroid-card">
-            <img src="risorse/video.png" alt="Video" class="polaroid-img" />
-            <div class="polaroid-label">Video</div>
-          </div>
-          <div class="polaroid-card">
-            <img src="risorse/3d-modeling.png" alt="Elementi 3D" class="polaroid-img" />
-            <div class="polaroid-label">Elementi 3D</div>
-          </div>
-        </div>
-      </div>
-      <h3 style="margin-top:3rem;">I miei lavori</h3>
-      
-      <div id="work-detail" class="work-detail-card" style="display: none;">
-        <button id="close-detail" class="close-detail-btn" title="Chiudi">&times;</button>
-        <div id="work-detail-content"></div>
-      </div>
-    </section>
-    <footer>
-      <p>&copy; 2025 - Ludovica Simeoli</p>
-    </footer>
-  </main>
-
-
   <style>
     {
       margin: 0;
@@ -230,6 +178,56 @@
 }
 
   </style>
+</head>
+<body>
+  <aside class="sidebar">
+    
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About me</a>
+      <a href="works.html" class="active">My projects</a>
+    </nav>
+  </aside>
+  <main class="main-content">
+    <section id="works">
+      <div class="polaroid-gallery polaroid-centered">
+        <div class="polaroid-row">
+          <div class="polaroid-card">
+            <img src="risorse/worldwide.png" alt="Siti" class="polaroid-img" />
+            <div class="polaroid-label">Siti</div>
+          </div>
+          <div class="polaroid-card">
+            <img src="risorse/prodottigrafici.png" alt="Prodotti Grafici" class="polaroid-img" />
+            <div class="polaroid-label">Prodotti Grafici</div>
+          </div>
+          <div class="polaroid-card">
+            <img src="risorse/vr.png" alt="Ambienti Virtuali" class="polaroid-img" />
+            <div class="polaroid-label">Ambienti Virtuali</div>
+          </div>
+        </div>
+        <div class="polaroid-row">
+          <div class="polaroid-card">
+            <img src="risorse/video.png" alt="Video" class="polaroid-img" />
+            <div class="polaroid-label">Video</div>
+          </div>
+          <div class="polaroid-card">
+            <img src="risorse/3d-modeling.png" alt="Elementi 3D" class="polaroid-img" />
+            <div class="polaroid-label">Elementi 3D</div>
+          </div>
+        </div>
+      </div>
+      <h3 style="margin-top:3rem;">I miei lavori</h3>
+      
+      <div id="work-detail" class="work-detail-card" style="display: none;">
+        <button id="close-detail" class="close-detail-btn" title="Chiudi">&times;</button>
+        <div id="work-detail-content"></div>
+      </div>
+    </section>
+    <footer>
+      <p>&copy; 2025 - Ludovica Simeoli</p>
+    </footer>
+  </main>
+
   <script>
 
 const cards = document.querySelectorAll('.polaroid-card');
