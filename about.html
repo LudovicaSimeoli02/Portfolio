@@ -215,6 +215,17 @@ nav a.active::after {
        MOBILE
        ========================= */
   @media (max-width: 768px) {
+
+    /* ORDINE ELEMENTI */
+  .about-card-photo {
+    order: 1;   /* PRIMA la foto */
+  }
+
+  .about-col-formazione-esperienza {
+    order: 2;   /* POI tasti + contenuto */
+  }
+
+    
   /* GRID principale */
   .about-grid {
     flex-direction: column;
