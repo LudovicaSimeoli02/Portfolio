@@ -220,110 +220,89 @@ nav a.active::after {
        ========================= */
   @media (max-width: 768px) {
 
-    /* ORDINE ELEMENTI */
-  .about-card-photo {
-    order: 1;   /* PRIMA la foto */
-  }
+    nav a {
+        font-size: 1.2rem;
+      }
 
-  .about-col-formazione-esperienza {
-    order: 2;   /* POI tasti + contenuto */
-  }
+      footer {
+        font-size: 1rem;
+      }
 
-    
-  /* GRID principale */
-  .about-grid {
+   .about-grid {
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
-    transform: none;
+    gap: 1.2rem;
+    padding: 1rem;
   }
 
-    .about-card-photo,
-  .about-photo-text {
-    height: 150px;
-  }
-
-     .about-card-photo {
-    width: 150px;
-    margin-right: 0.5rem;
-  }
-
-    
-
-  
-    
-
-  /* FOTO sotto il menu */
+  /* FOTO PROFILO */
   .about-card-photo {
-    width: 120px;
-    height: 120px;
-    flex-shrink: 0;
+    order: 1;
+    width: 140px;
+    height: 140px;
+    border-radius: 18px;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .about-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 12px;
+    border-radius: 14px;
   }
 
-  /* COLONNA FORM + CONTENUTI */
+  /* COLONNA TASTI + CONTENUTI */
   .about-col-formazione-esperienza {
+    order: 2;
     flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
-    width: auto;
+    gap: 0.8rem;
+    width: 100%;
+    max-width: 400px;
   }
 
-    
-
-  /* SOLO 3 TASTI IN RIGA */
+  /* TABS: 4 TASTI IN RIGA */
   .about-tabs {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
+    width: 100%;
     gap: 0.5rem;
-    width: auto;
   }
 
   .about-tab-btn {
-    min-height: 50px;       
-    padding: 0.5rem 0.8rem;
-    font-size: 1rem;       
-    flex: 1;                
+    flex: 1;
+    min-height: 50px;
+    font-size: 0.85rem;
+    padding: 0.5rem;
+    border-radius: 12px;
     text-align: center;
+  }
+
+  .about-tab-btn.active {
+    font-weight: 700;
   }
 
   /* CONTENUTO DELLA TAB */
   .about-tab-content-card {
-    width: calc(100% - 2rem); 
-    max-width: 360px;
-    height: 200px;           
-    margin-top: 0.5rem;
-    padding: 0.8rem;
-    font-size: 0.9rem;        
-    overflow-y: auto;         
-  }
-
-  
-  nav a {
-    font-size: 1.2rem;
-  }
-
-    .about-tab-content {
-  font-size: 0.75rem;   
-  line-height: 1.4;
-}
-
-    .photo-text-row {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 0.5rem;
     width: 100%;
-    justify-content: center;
-    margin-bottom: 1rem;
+    height: 220px; /* altezza fissa */
+    padding: 0.9rem 1rem;
+    border-radius: 18px;
+    font-size: 0.85rem;
+    overflow-y: auto;
+    text-align: left;
+    margin-top: 0.6rem;
   }
+
+  .about-tab-content {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+
 }
 
 
