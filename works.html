@@ -275,31 +275,41 @@
   }
 
       .polaroid-card {
-    width: 45%;       /* due card per riga */
-    max-width: 150px; /* limite massimo */
+    width: 45%;       
+    max-width: 150px; 
     padding: 0.6rem 0.6rem 1rem 0.6rem;
+        margin-bottom: 1rem;
   }
+
+      .polaroid-row:nth-child(2) .polaroid-card {
+    width: 45%;           
+    margin-left: auto;
+    margin-right: auto;
+  }
+      
 
   /* immagini all'interno */
   .polaroid-img {
     width: 100%;
-    height: 100px;    /* più piccola */
+    height: 100px;  
   }
 
   .polaroid-label {
-    font-size: 0.9rem; /* testo più piccolo */
+    font-size: 0.9rem; 
   }
 
   /* riga di card */
   .polaroid-row {
-    gap: 1rem;        /* meno spazio tra card */
-    justify-content: space-around;
+   display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
   }
 
   /* contenitore generale */
   .polaroid-gallery.polaroid-centered {
-    margin: 2rem auto;  /* meno margine verticale */
-    gap: 1.5rem;        /* meno spazio tra le righe */
+    margin: 2rem auto;  
+    gap: 1.5rem;        
   }
 
   /* ======================
