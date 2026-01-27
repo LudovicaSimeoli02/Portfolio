@@ -229,7 +229,6 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
-  border-radius: 16px;
   background: #fff;
   border: 1px solid #111;
 }
@@ -543,42 +542,43 @@ cards.forEach(card => {
       detailContent.innerHTML = '';
     }
      // SLIDESHOW JS
-  const slideshows = detailContent.querySelectorAll('.slideshow-container');
 
-      slideshows.forEach(slideshow => {
-        let index = 0;
-        const slides = slideshow.querySelectorAll('.slide');
-        const prev = slideshow.querySelector('.prev');
-        const next = slideshow.querySelector('.next');
+const slideshows = detailContent.querySelectorAll('.slideshow-container');
 
-        slides.forEach((s, i) => s.style.display = i === 0 ? 'block' : 'none');
+slideshows.forEach(slideshow => {
+  let slideIndex = 0;
+  const slides = slideshow.querySelectorAll('.slide');
+  const prevBtn = slideshow.querySelector('.prev');
+  const nextBtn = slideshow.querySelector('.next');
 
-        if (!prev || !next) return;
+  if (slides.length <= 1) return; // niente slideshow se 1 sola immagine
 
-        prev.addEventListener('click', () => {
-          slides[index].style.display = 'none';
-          index = (index - 1 + slides.length) % slides.length;
-          slides[index].style.display = 'block';
-        });
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.style.display = i === index ? 'block' : 'none';
+    });
+  }
 
-        next.addEventListener('click', () => {
-          slides[index].style.display = 'none';
-          index = (index + 1) % slides.length;
-          slides[index].style.display = 'block';
-        });
-      });
-    }
+  showSlide(slideIndex);
+
+  prevBtn.addEventListener('click', () => {
+    slideIndex = (slideIndex - 1 + slides.length) % slides.length;
+    showSlide(slideIndex);
+  });
+
+  nextBtn.addEventListener('click', () => {
+    slideIndex = (slideIndex + 1) % slides.length;
+    showSlide(slideIndex);
   });
 });
 
-    
 
 closeBtn.addEventListener('click', () => {
   detail.style.display = 'none';
   
   document.querySelector('.polaroid-gallery').scrollIntoView({ behavior: 'smooth', block: 'center' });
 });
-  </script>
+  </script> 
  
 </body>
 </html>
