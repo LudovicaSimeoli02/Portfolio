@@ -332,7 +332,7 @@ const detailContent = document.getElementById('work-detail-content');
 const closeBtn = document.getElementById('close-detail');
 
 cards.forEach(card => {
-  card.addEventListener('click', () => {
+  card.addEventListener('click', () => 
     const label = card.querySelector('.polaroid-label').textContent.trim();
     detail.style.display = 'flex';
     detail.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -409,134 +409,160 @@ cards.forEach(card => {
       `;
     } else if (label === 'Prodotti Grafici') {
       detailContent.innerHTML = `
-        <h2 style="font-family: 'Indie Flower', cursive; color: #2C5F2D; font-size: 2.2rem; margin-bottom: 1.5rem;">Prodotti grafici</h2>
-          <span style='display: block; margin-bottom: 0.2rem; margin-left: 4rem; font-family: "Quicksand", sans-serif; font-size: 1.1rem; color: #2C5F2D; font-weight: bold; text-align: left; width: 500px; background: linear-gradient(90deg, #FFE066 60%, transparent 100%); border-radius: 6px; padding: 0.1em 0.4em;'>Fumetti al Caffè: fumetteria e caffetteria</span>
-<p style="font-family: 'Quicksand', sans-serif; color: #2C5F2D; font-size: 1.05rem; margin-top: 1.1rem; margin-bottom: 1.5rem; margin-left: 4rem; text-align: left;">Prodotti grafici coordinati per sponsorizzazione locale. Prodotti realizzati con Adobe Illustrator e Adobe Photoshop.  </p>
-    <div style="display: flex; gap: 0.7rem; justify-content: center; align-items: flex-start; flex-wrap: wrap; margin-bottom: 2.2rem;">
-      <div style='display: flex; flex-direction: column; align-items: center;'>
-        <img src='risorse/fumetto1.png' alt='Logo Fumetti al Caffè' style='height: 320px; width: 500px; max-width: 500px; border-radius: 12px; margin: 0; display: block; object-fit: cover; border: 1px solid #111;'>
-        <span style="font-family: 'Quicksand', sans-serif; color: #2C5F2D; font-size: 1.01rem; margin-top: 0.5rem; text-align: center; display: block; width: 100%;">Logo</span>
+
+      <div class="work-section">
+    <h2 class="work-title"> Prodotti grafici </h2>
+
+    <div>
+      <div class="work-subtitle"> Fumetti al Caffè: fumetteria e caffetteria </div>
+      <div class="work-description">
+       Prodotti grafici coordinati per sponsorizzazione locale. Prodotti realizzati con Adobe Illustrator e Adobe Photoshop.
       </div>
-      <div style='display: flex; flex-direction: column; align-items: center;'>
-        <img src='risorse/fumetto2.PNG' alt='Brochure fronte' style='height: 320px; width: 500px; max-width: 500px; border-radius: 12px; margin: 0; display: block; object-fit: cover; border: 1px solid #111;'>
-        <span style="font-family: 'Quicksand', sans-serif; color: #2C5F2D; font-size: 1.01rem; margin-top: 0.5rem; text-align: center; display: block; width: 100%;">Brochure - Fronte</span>
-      </div>
-      <div style='display: flex; flex-direction: column; align-items: center;'>
-        <img src='risorse/fumetto3.PNG' alt='Brochure retro' style='height: 320px; width: 450px; max-width: 450px; border-radius: 12px; margin: 0; display: block; object-fit: cover; border: 1px solid #111;'>
-        <span style="font-family: 'Quicksand', sans-serif; color: #2C5F2D; font-size: 1.01rem; margin-top: 0.5rem; text-align: center; display: block; width: 100%;">Brochure - Retro</span>
-      </div>
-      <div style='display: flex; flex-direction: column; align-items: center;'>
-        <img src='risorse/fumetto4.PNG' alt='Poster' style='height: 320px; width: auto; max-width: 420px; border-radius: 12px; margin: 0; display: block; object-fit: cover; border: 1px solid #111;'>
-        <span style="font-family: 'Quicksand', sans-serif; color: #2C5F2D; font-size: 1.01rem; margin-top: 0.5rem; text-align: center; display: block; width: 100%;">Poster</span>
-      </div>
-      <div style='display: flex; flex-direction: column; align-items: center;'>
-        <img src='risorse/fumetto5.PNG' alt='Mockup sito' style='height: 320px; width: auto; max-width: 420px; border-radius: 12px; margin: 0; display: block; object-fit: cover; border: 1px solid #111;'>
-        <span style="font-family: 'Quicksand', sans-serif; color: #2C5F2D; font-size: 1.01rem; margin-top: 0.5rem; text-align: center; display: block; width: 100%;">Mockup sito</span>
+
+      <div class="slideshow-container">
+        <img class="slide" src="risorse/siti/fumetto1.png">
+        <img class="slide" src="risorse/siti/fumetto2.PNG" style="display:none;">
+        <img class="slide" src="risorse/siti/fumetto3.PNG" style="display:none;">
+        <img class="slide" src="risorse/siti/fumetto4.PNG" style="display:none;">
+        <img class="slide" src="risorse/siti/fumetto5.PNG" style="display:none;">
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
       </div>
     </div>
-          
-       <span style='display: block; margin-bottom: 0.2rem; margin-left: 6rem; font-family: "Quicksand", sans-serif; font-size: 1.1rem; color: #2C5F2D; font-weight: bold; text-align: left; width: 500px; background: linear-gradient(90deg, #FFE066 60%, transparent 100%); border-radius: 6px; padding: 0.1em 0.4em;'> Ottica NITIDO</span>
-        <p style="font-family: 'Quicksand', sans-serif; color: #2C5F2D; font-size: 1.05rem; margin-top: 1.1rem; margin-bottom: 1.5rem; margin-left: 6rem; text-align: left;">Materiale promozionale e grafica coordinata per Ottica Nitido: logo, poster e contenuti social. Progetto di branding e comunicazione visiva.Prodotti realizzati con Adobe Illustrator, Adobe Photoshop e Canva.</p>
-        <div style="display: flex; flex-wrap: wrap; gap: 0.7rem; justify-content: center; align-items: flex-start; margin-bottom: 2.2rem;">
-          <div style='display: flex; flex-direction: column; align-items: center;'>
-            <img src='risorse/nitido1.PNG' alt='Nitido 1' style='height: 320px; width: 450px; max-width: 450px; border-radius: 12px; margin: 0; display: block; object-fit: cover; border: 1px solid #111;'>
-            <span style="font-family: 'Quicksand', sans-serif; color: #2C5F2D; font-size: 1.01rem; margin-top: 0.5rem; text-align: center; display: block; width: 100%;">Logo </span>
-          </div>
-          <div style='display: flex; flex-direction: column; align-items: center;'>
-            <img src='risorse/nitido2.PNG' alt='Nitido 2' style='height: 320px; width: 500px; max-width: 500px; border-radius: 12px; margin: 0; display: block; object-fit: cover; border: 1px solid #111;'>
-            <span style="font-family: 'Quicksand', sans-serif; color: #2C5F2D; font-size: 1.01rem; margin-top: 0.5rem; text-align: center; display: block; width: 100%;">Post social</span>
-          </div>
-          <div style='display: flex; flex-direction: column; align-items: center;'>
-            <img src='risorse/nitido3.PNG' alt='Nitido 3' style='height: 320px; width: 420px; max-width: 420px; border-radius: 12px; margin: 32px 0 0 0; display: block; object-fit: contain; background: #fff; border: 1px solid #111;'>
-            <span style="font-family: 'Quicksand', sans-serif; color: #2C5F2D; font-size: 1.01rem; margin-top: 0.5rem; text-align: center; display: block; width: 100%;">Poster </span>
-          </div>
-          <div style='display: flex; flex-direction: column; align-items: center;'>
-            <img src='risorse/nitido4.PNG' alt='Nitido 4' style='height: 320px; width: 500px; max-width: 500px; border-radius: 12px; margin: 32px 0 0 0; display: block; object-fit: cover; border: 1px solid #111;'>
-            <span style="font-family: 'Quicksand', sans-serif; color: #2C5F2D; font-size: 1.01rem; margin-top: 0.5rem; text-align: center; display: block; width: 100%;">Biglietto da visita</span>
-          </div>
-          <div style='display: flex; flex-direction: column; align-items: center;'>
-            <img src='risorse/nitido5.PNG' alt='Nitido 5' style='height: 320px; width: 550px; max-width: 550px; border-radius: 12px; margin: 32px 0 0 0; display: block; object-fit: cover; border: 1px solid #111;'>
-            <span style="font-family: 'Quicksand', sans-serif; color: #2C5F2D; font-size: 1.01rem; margin-top: 0.5rem; text-align: center; display: block; width: 100%;"> Storie social </span>
-          </div>
-        </div>
 
-        <span style='display: block; margin-bottom: 0.2rem; margin-left: 10rem; font-family: "Quicksand", sans-serif; font-size: 1.1rem; color: #2C5F2D; font-weight: bold; text-align: left; width: 500px; background: linear-gradient(90deg, #FFE066 60%, transparent 100%); border-radius: 6px; padding: 0.1em 0.4em;'> Impaginato Banksy </span>
-        <p style="font-family: 'Quicksand', sans-serif; color: #2C5F2D; font-size: 1.05rem; margin-top: 1.1rem; margin-bottom: 1.5rem; margin-left: 10rem; text-align: left;">Progetto editoriale dedicato a Banksy: impaginazione e grafica di un volume illustrato realizzato con Adobe InDesign.</p>
-        <div style="display: flex; flex-wrap: wrap; gap: 0.7rem; justify-content: center; align-items: flex-start; margin-bottom: 2.2rem;">
-          <div style='display: flex; flex-direction: column; align-items: center;'>
-            <img src='risorse/banksy1.PNG' alt='Banksy 1' style='height: 320px; width: auto; max-width: 420px; border-radius: 12px; margin: 0; display: block; object-fit: cover; border: 1px solid #111;'>
-            <span style="font-family: 'Quicksand', sans-serif; color: #2C5F2D; font-size: 1.01rem; margin-top: 0.5rem; text-align: center; display: block; width: 100%;">Copertina volume</span>
-          </div>
-          <div style='display: flex; flex-direction: column; align-items: center;'>
-            <img src='risorse/banksy2.PNG' alt='Banksy 2' style='height: 320px; width: auto; max-width: 420px; border-radius: 12px; margin: 0; display: block; object-fit: cover; border: 1px solid #111;'>
-            <span style="font-family: 'Quicksand', sans-serif; color: #2C5F2D; font-size: 1.01rem; margin-top: 0.5rem; text-align: center; display: block; width: 100%;">Pagina interna 1</span>
-          </div>
-          <div style='display: flex; flex-direction: column; align-items: center;'>
-            <img src='risorse/banksy3.PNG' alt='Banksy 3' style='height: 320px; width: auto; max-width: 420px; border-radius: 12px; margin: 0; display: block; object-fit: cover; border: 1px solid #111;'>
-            <span style="font-family: 'Quicksand', sans-serif; color: #2C5F2D; font-size: 1.01rem; margin-top: 0.5rem; text-align: center; display: block; width: 100%;">Pagina interna 2</span>
-          </div>
-          <div style='display: flex; flex-direction: column; align-items: center;'>
-            <img src='risorse/banksy4.PNG' alt='Banksy 4' style='height: 320px; width: auto; max-width: 420px; border-radius: 12px; margin: 0; display: block; object-fit: cover; border: 1px solid #111;'>
-            <span style="font-family: 'Quicksand', sans-serif; color: #2C5F2D; font-size: 1.01rem; margin-top: 0.5rem; text-align: center; display: block; width: 100%;">Pagina interna 3</span>
-          </div>
-          <div style='display: flex; flex-direction: column; align-items: center;'>
-            <img src='risorse/banksy5.PNG' alt='Banksy 5' style='height: 320px; width: auto; max-width: 420px; border-radius: 12px; margin: 0; display: block; object-fit: cover; border: 1px solid #111;'>
-            <span style="font-family: 'Quicksand', sans-serif; color: #2C5F2D; font-size: 1.01rem; margin-top: 0.5rem; text-align: center; display: block; width: 100%;">Pagina interna 4</span>
-          </div>
-          <div style='display: flex; flex-direction: column; align-items: center;'>
-            <img src='risorse/banksy6.PNG' alt='Banksy 6' style='height: 320px; width: auto; max-width: 420px; border-radius: 12px; margin: 0; display: block; object-fit: cover; border: 1px solid #111;'>
-            <span style="font-family: 'Quicksand', sans-serif; color: #2C5F2D; font-size: 1.01rem; margin-top: 0.5rem; text-align: center; display: block; width: 100%;">Retro copertina</span>
-          </div>
-        </div>
+    <div>
+      <div class="work-subtitle"> Ottica NITIDO </div>
+      <div class="work-description">
+       Materiale promozionale e grafica coordinata per Ottica Nitido: logo, poster e contenuti social. Progetto di branding e comunicazione visiva.Prodotti realizzati con Adobe Illustrator, Adobe Photoshop e Canva.
+      </div>
+
+      <div class="slideshow-container">
+        <img class="slide" src="risorse/siti/nitido1.png">
+        <img class="slide" src="risorse/siti/nitido2.PNG" style="display:none;">
+        <img class="slide" src="risorse/siti/nitido3.PNG" style="display:none;">
+        <img class="slide" src="risorse/siti/nitido4.PNG" style="display:none;">
+        <img class="slide" src="risorse/siti/nitido5.PNG" style="display:none;">
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+      </div>
+    </div>
+
+     <div>
+      <div class="work-subtitle"> Ottica NITIDO </div>
+      <div class="work-description">
+       Materiale promozionale e grafica coordinata per Ottica Nitido: logo, poster e contenuti social. Progetto di branding e comunicazione visiva.Prodotti realizzati con Adobe Illustrator, Adobe Photoshop e Canva.
+      </div>
+
+      <div class="slideshow-container">
+        <img class="slide" src="risorse/siti/nitido1.png">
+        <img class="slide" src="risorse/siti/nitido2.PNG" style="display:none;">
+        <img class="slide" src="risorse/siti/nitido3.PNG" style="display:none;">
+        <img class="slide" src="risorse/siti/nitido4.PNG" style="display:none;">
+        <img class="slide" src="risorse/siti/nitido5.PNG" style="display:none;">
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+      </div>
+    </div>
+
+   <div>
+      <div class="work-subtitle"> Impaginato Banksy </div>
+      <div class="work-description">
+       Progetto editoriale dedicato a Banksy: impaginazione e grafica di un volume illustrato realizzato con Adobe InDesign.
+      </div>
+
+      <div class="slideshow-container">
+        <img class="slide" src="risorse/siti/banksy1.png">
+        <img class="slide" src="risorse/siti/banksy2.PNG" style="display:none;">
+        <img class="slide" src="risorse/siti/banksy3.PNG" style="display:none;">
+        <img class="slide" src="risorse/siti/banksy4.PNG" style="display:none;">
+        <img class="slide" src="risorse/siti/banksy5.PNG" style="display:none;">
+         <img class="slide" src="risorse/siti/banksy6.PNG" style="display:none;">
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+      </div>
+    </div>
+
+     </div> 
+
       `;
     } else if (label === 'Video') {
       detailContent.innerHTML = `
-        <h2 style="font-family: 'Indie Flower', cursive; color: #2C5F2D; font-size: 2.2rem; margin-bottom: 1.5rem;"> Prodotti Video</h2>
-        <div style="display: flex; flex-wrap: wrap; gap: 2.2rem; justify-content: center; align-items: flex-start; margin-bottom: 2.2rem;">
-          <div style='display: flex; flex-direction: column; align-items: center;'>
-            <video controls style='width: 420px; max-width: 100%; border-radius: 14px; border: 1px solid #111; background: #fff; box-shadow: 0 2px 12px #E18AD433;'>
+
+      <div class="work-section">
+    <h2 class="work-title"> Prodotti video </h2>
+
+    <div>
+      <div class="work-subtitle"> Spot ottica Nitido </div>
+      <div class="work-description">
+       Spot pubblicitario per l'ottica Nitido, realizzato per promuovere la nuova collezione di occhiali. Video realizzato con Adobe Premiere Pro.
+      </div>
+
+      <div class="slideshow-container">
+        <video controls style='width: 420px; max-width: 100%; border-radius: 14px; border: 1px solid #111; background: #fff; box-shadow: 0 2px 12px #E18AD433;'>
               <source src='risorse/SPOT.mp4' type='video/mp4'>
               Il tuo browser non supporta il tag video.
             </video>
-            <span style='margin-top: 0.7rem; font-family: "Quicksand", sans-serif; font-size: 1.1rem; color: #2C5F2D; font-weight: bold; display: inline-block; background: linear-gradient(90deg, #FFE066 60%, transparent 100%); border-radius: 6px; padding: 0.1em 0.4em;'> Spot Ottica NITIDO </span>
-            <p style="font-family: 'Quicksand', sans-serif; color: #2C5F2D; font-size: 0.98rem; margin: 0.3rem 0 0.7rem 0; text-align: center; max-width: 420px;">Spot pubblicitario per l'ottica Nitido, realizzato per promuovere la nuova collezione di occhiali. Video realizzato con Adobe Premiere Pro</p>
-          </div>
-          <div style='display: flex; flex-direction: column; align-items: center;'>
-            <video controls style='width: 420px; max-width: 100%; border-radius: 14px; border: 1px solid #111; background: #fff; box-shadow: 0 2px 12px #E18AD433;'>
+      </div>
+    </div>
+
+     <div>
+      <div class="work-subtitle"> Zorro in pensione </div>
+      <div class="work-description">
+      Cortometraggio ironico che racconta la vita di Zorro dopo la pensione. Video realizzato con Adobe Premiere Pro.
+      </div>
+
+      <div class="slideshow-container">
+       <video controls style='width: 420px; max-width: 100%; border-radius: 14px; border: 1px solid #111; background: #fff; box-shadow: 0 2px 12px #E18AD433;'>
               <source src='risorse/Zorro in pensione.mp4' type='video/mp4'>
               Il tuo browser non supporta il tag video.
             </video>
-            <span style='margin-top: 0.7rem; font-family: "Quicksand", sans-serif; font-size: 1.1rem; color: #2C5F2D; font-weight: bold; display: inline-block; background: linear-gradient(90deg, #FFE066 60%, transparent 100%); border-radius: 6px; padding: 0.1em 0.4em;'> Zorro in Pensione </span>
-            <p style="font-family: 'Quicksand', sans-serif; color: #2C5F2D; font-size: 0.98rem; margin: 0.3rem 0 0.7rem 0; text-align: center; max-width: 420px;">Cortometraggio ironico che racconta la vita di Zorro dopo la pensione. Video realizzato con Adobe Premiere Pro. </p>
-            <a href="risorse/ZorroInPensioneCompress.zip" download style="display: inline-block; background: linear-gradient(90deg, #F9D6EC 60%, #EFC7E5 100%); color: #2C5F2D; font-family: 'Quicksand', sans-serif; font-weight: bold; padding: 0.35em 1.1em; border-radius: 7px; font-size: 0.98rem; text-decoration: none; box-shadow: 0 2px 8px #E18AD433; border: 1.5px solid #EFC7E5; margin-top: 0.2rem; transition: background 0.2s;">Scarica il video completo (zip)</a>
-          </div>
-        </div>
+      </div>
+    </div>
+      
+    </div>
+        
       `;
     } else if (label === 'Ambienti Virtuali') {
       detailContent.innerHTML = `
-      <h2 style="font-family: 'Indie Flower', cursive; color: #2C5F2D; font-size: 2.2rem; margin-bottom: 1.5rem;"> Ambienti virtuali</h2>
-        <span style='display: block; margin-bottom: 0.2rem; margin-left: 2rem; font-family: "Quicksand", sans-serif; font-size: 1.1rem; color: #2C5F2D; font-weight: bold; text-align: left; width: 500px; background: linear-gradient(90deg, #FFE066 60%, transparent 100%); border-radius: 6px; padding: 0.1em 0.4em;'> Lo store di Nitido</span>
-        <p style="font-family: 'Quicksand', sans-serif; color: #2C5F2D; font-size: 1.05rem; margin-top: 1.1rem; margin-bottom: 1.5rem; margin-left: 2rem; text-align: left; max-width: 700px;"> Store virtuale dell'ottica Nitido realizzata con Artsteps: questo elemento fa parte della campagna pubblicitaria del marchio 'Nitido' i cui prodotti coordinati sono presenti nella sezione prodotti grafici.</p>
-        <div style='border: 2.5px solid #EFC7E5; border-radius: 14px; padding: 1.1rem 1.2rem; margin: 0 2rem 1.5rem 2rem; background: #fff; min-height: 60px; display: flex; align-items: center; justify-content: center;'>
+
+       <div class="work-section">
+    <h2 class="work-title"> Ambienti virtuali </h2>
+
+    <div>
+      <div class="work-subtitle"> Store Nitido </div>
+      <div class="work-description">
+       Store virtuale dell'ottica Nitido realizzata con Artsteps: questo elemento fa parte della campagna pubblicitaria del marchio 'Nitido' i cui prodotti coordinati sono presenti nella sezione prodotti grafici.
+      </div>
+
+      <div class="slideshow-container">
         <video controls style='width: 100%; max-width: 700px; height: auto; display: block; border-radius: 14px; border: 1px solid #111; background: #fff; box-shadow: 0 2px 12px #E18AD433;'>
               <source src='risorse/Video_Nitido.mp4' type='video/mp4'>
               Il tuo browser non supporta il tag video.
             </video>
-          </div>
-        <div style='display: flex; flex-direction: row; justify-content: flex-start; align-items: flex-end; margin-bottom: 2.2rem; width: 100%;'>
+      </div>
+      <div style='display: flex; flex-direction: row; justify-content: flex-start; align-items: flex-end; margin-bottom: 2.2rem; width: 100%;'>
           <a href="https://www.artsteps.com/view/642bd5978f8e5f1e9738f1c8" target="_blank" rel="noopener" style="display: inline-block; background: linear-gradient(90deg, #F9D6EC 60%, #EFC7E5 100%); color: #2C5F2D; font-family: 'Quicksand', sans-serif; font-weight: bold; padding: 0.35em 1.1em; border-radius: 7px; font-size: 0.98rem; text-decoration: none; box-shadow: 0 2px 8px #E18AD433; border: 1.5px solid #EFC7E5; margin-top: 0.2rem; margin-left: 2.5rem; transition: background 0.2s;">Visualizza store</a>
         </div>
-        <span style='display: block; margin-bottom: 0.2rem; margin-left: 2rem; font-family: "Quicksand", sans-serif; font-size: 1.1rem; color: #2C5F2D; font-weight: bold; text-align: left; width: 500px; background: linear-gradient(90deg, #FFE066 60%, transparent 100%); border-radius: 6px; padding: 0.1em 0.4em;'> Videogioco ambientato nello spazio</span>
-        <p style="font-family: 'Quicksand', sans-serif; color: #2C5F2D; font-size: 1.05rem; margin-top: 1.1rem; margin-bottom: 1.5rem; margin-left: 2rem; text-align: left; max-width: 700px;"> Videogioco interattivo realizzato con Unity: ti trovi nello spazio, a bordo di una navicella che interagirà con pianeti e meteoriti. Scarica ed esegui il file per provare l'esperienza immersiva.</p>
-        <div style='border: 2.5px solid #EFC7E5; border-radius: 14px; padding: 1.1rem 1.2rem; margin: 0 2rem 1.5rem 2rem; background: #fff; min-height: 60px; display: flex; align-items: center; justify-content: center;'>
-           <video controls style='width: 100%; max-width: 700px; height: auto; display: block; border-radius: 14px; border: 1px solid #111; background: #fff; box-shadow: 0 2px 12px #E18AD433;'>
+    </div>
+
+     <div>
+      <div class="work-subtitle"> Videogioco ambientato nello spazio </div>
+      <div class="work-description">
+      Videogioco interattivo realizzato con Unity: ti trovi nello spazio, a bordo di una navicella che interagirà con pianeti e meteoriti. Scarica ed esegui il file per provare l'esperienza immersiva.
+      </div>
+
+      <div class="slideshow-container">
+       <video controls style='width: 100%; max-width: 700px; height: auto; display: block; border-radius: 14px; border: 1px solid #111; background: #fff; box-shadow: 0 2px 12px #E18AD433;'>
               <source src='risorse/Video_AV.mp4' type='video/mp4'>
               Il tuo browser non supporta il tag video.
             </video>
-        </div>
-        <div style='display: flex; flex-direction: row; justify-content: flex-start; align-items: flex-end; margin-bottom: 2.2rem; width: 100%;'>
+      </div>
+    </div>
+      <div style='display: flex; flex-direction: row; justify-content: flex-start; align-items: flex-end; margin-bottom: 2.2rem; width: 100%;'>
           <a href="risorse/Progetto AV.zip" download style="display: inline-block; background: linear-gradient(90deg, #F9D6EC 60%, #EFC7E5 100%); color: #2C5F2D; font-family: 'Quicksand', sans-serif; font-weight: bold; padding: 0.35em 1.1em; border-radius: 7px; font-size: 0.98rem; text-decoration: none; box-shadow: 0 2px 8px #E18AD433; border: 1.5px solid #EFC7E5; margin-top: 0.2rem; margin-left: 2.5rem; transition: background 0.2s;">Scarica il gioco (zip)</a>
         </div>
+    </div>
+        
       `;
     } else {
       detailContent.innerHTML = '';
