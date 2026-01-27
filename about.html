@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
@@ -28,25 +28,51 @@
        MENU 
        ========================= */
     nav {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      padding: 2rem 0;
-      background-color: #f8f8f8;
-    }
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem 0;
+  background-color: #f8f8f8;
+}
 
-    nav a {
-      text-decoration: none;
-      color: #D4A89B;
-      font-weight: 600;
-      font-size: 1.5rem;
-      position: relative;
-    }
+nav a {
+  text-decoration: none;
+  color: #D4A89B;
+  font-weight: 600;
+  font-size: 1.5rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
 
-    nav a.active {
-      font-weight: 800;
-      color: #D68C45;
-    }
+/* underline animata */
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 3px;
+  background-color: #C07A67;
+  transition: width 0.3s ease;
+}
+
+nav a:hover {
+  color: #C07A67;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* pagina attiva */
+nav a.active {
+  font-weight: 800;
+  color: #D68C45;
+}
+
+nav a.active::after {
+  width: 0;
+}
 
     /* =========================
        MAIN
@@ -59,18 +85,19 @@
     }
 
     /* =========================
-       GRID
+       CONTENUTO
        ========================= */
     .about-grid {
       display: flex;
       gap: 2.5rem;
-      align-items: stretch;
-      justify-content: center;
+      flex-wrap: nowrap;
+      position: relative;          
+      align-items: stretch;       
     }
 
     .about-col-formazione-esperienza {
       display: flex;
-      gap: 2.5rem;
+      gap: 1.5rem;
     }
 
     /* =========================
@@ -81,44 +108,53 @@
       flex-direction: column;
       gap: 0.5rem;
       width: 190px;
+      flex-shrink: 0;
     }
 
-    .about-tab-btn {
-      padding: 1rem;
-      border: none;
-      background: #f4ebef;
-      font-weight: 600;
-      font-size: 1.25rem;
-      border-radius: 14px;
-      min-height: 90px;
-      cursor: pointer;
-    }
+  .about-tab-btn {
+  padding: 1rem;
+  border: none;
+  cursor: pointer;
+  background: #f4ebef;
+  font-weight: 600;
+
+  font-size: 1.25rem;     
+  text-align: center;      
+
+  border-radius: 14px;
+  min-height: 90px;
+
+  display: flex;           
+  align-items: center;     
+  justify-content: center; 
+}
 
     .about-tab-btn.active {
       background: #D68C45;
       color: white;
     }
 
-    /* =========================
-       CONTENUTO
-       ========================= */
+    
     .about-tab-content-card {
-      width: 700px;
+      width: 700px;             
       background: #f4ebef;
       padding: 1.6rem;
       border-radius: 22px;
       box-shadow: 0 6px 20px rgba(0,0,0,0.1);
       text-align: left;
+      flex-shrink: 0;
+      display: flex;
     }
 
     .about-tab-content {
+      width: 100%;
       font-size: 1.25rem;
       line-height: 1.7;
       overflow-y: auto;
     }
 
     /* =========================
-       FOTO
+       FOTO PROFILO
        ========================= */
     .about-card-photo {
       width: 340px;
@@ -126,8 +162,10 @@
       padding: 1rem;
       border-radius: 22px;
       box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      flex-shrink: 0;
       display: flex;
       align-items: flex-end;
+      overflow: hidden;
     }
 
     .about-image {
@@ -140,75 +178,122 @@
     /* =========================
        FOOTER
        ========================= */
-    footer {
-      margin-top: 3rem;
+     footer {
       font-size: 1.1rem;
+      color: #2F2D2E;
+      padding: 1rem 0;
+      transform: translateY(280px);
     }
 
+
+    /* =========================
+       DESKTOP
+       ========================= */
+    @media (min-width: 769px) {
+  .about-col-formazione-esperienza,
+  .about-tab-content-card,
+  .about-card-photo {
+    height: 460px;
+  }
+
+  .about-grid {
+    margin-left: auto;
+    margin-right: auto;      
+    transform: translateX(-17px);
+    transform: translateY(100px);
+    gap: 2.5rem;
+  }
+      .about-col-formazione-esperienza {
+    gap: 2.5rem;                 
+  }
+
+  .about-tabs {
+    justify-content: space-between;
+  }
+}
     /* =========================
        MOBILE
        ========================= */
-    @media (max-width: 768px) {
+  @media (max-width: 768px) {
+  /* GRID principale */
+  .about-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    transform: none;
+  }
 
-      .about-grid {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-      }
+  /* FOTO sotto il menu */
+  .about-card-photo {
+    width: 150px;
+    height: 150px;
+    padding: 0.5rem;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;  
+    justify-content: center; 
+    margin-bottom: 1rem;
+  }
 
-      /* FOTO SOTTO IL MENU */
-      .about-card-photo {
-        width: 150px;
-        height: 150px;
-        padding: 0.5rem;
-      }
+  .about-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+  }
 
-      .about-col-formazione-esperienza {
-        flex-direction: column;
-        align-items: center;
-        gap: 0.5rem;
-      }
+  /* COLONNA FORM + CONTENUTI */
+  .about-col-formazione-esperienza {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    width: auto;
+  }
 
-      /* NASCONDO CONTATTI */
-      .about-tab-btn[data-tab="contatti"] {
-        display: none;
-      }
+    .about-tab-btn[data-tab="contatti"] {
+  display: none;
+}
 
-      /* ===== LARGHEZZA COMUNE ===== */
-      .about-tabs,
-      .about-tab-content-card {
-        width: 360px;
-        max-width: 90vw;
-      }
+  /* SOLO 3 TASTI IN RIGA */
+  .about-tabs {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.5rem;
+    width: auto;
+  }
 
-      /* 3 BOTTONI IN RIGA */
-      .about-tabs {
-        flex-direction: row;
-        gap: 0.5rem;
-      }
+  .about-tab-btn {
+    min-height: 50px;       /* più corti */
+    padding: 0.5rem 0.8rem;
+    font-size: 1rem;        /* più piccolo */
+    flex: 1;                /* uguale larghezza */
+    text-align: center;
+  }
 
-      .about-tab-btn {
-        flex: 1;
-        min-height: 50px;
-        font-size: 1rem;
-        padding: 0.5rem;
-      }
+  /* CONTENUTO DELLA TAB */
+  .about-tab-content-card {
+    width: calc(100% - 2rem); /* largo quanto i bottoni */
+    max-width: 360px;
+    height: 200px;            /* altezza fissa */
+    margin-top: 0.5rem;
+    padding: 0.8rem;
+    font-size: 0.9rem;        /* scritte più piccole */
+    overflow-y: auto;         /* scroll se troppo testo */
+  }
 
-      /* CONTENUTO */
-      .about-tab-content-card {
-        height: 200px;
-        padding: 0.8rem;
-      }
+  /* Menu mobile più piccolo */
+  nav a {
+    font-size: 1.2rem;
+  }
 
-      .about-tab-content {
-        font-size: 0.75rem;
-        line-height: 1.4;
-      }
+    .about-tab-content {
+  font-size: 0.75rem;   /* MOLTO più piccolo */
+  line-height: 1.4;
+}
+}
 
-      nav a {
-        font-size: 1.2rem;
-      }
-    }
+
   </style>
 
   <script src="about.js" defer></script>
@@ -216,46 +301,61 @@
 
 <body>
 
-<nav>
-  <a href="index.html">Home</a>
-  <a href="about.html" class="active">About me</a>
-  <a href="works.html">My projects</a>
-</nav>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html" class="active">About me</a>
+    <a href="works.html">My projects</a>
+  </nav>
 
-<main class="main-content">
-  <div class="about-grid">
+  <main class="main-content">
+    <div class="about-grid">
 
-    <div class="about-col-formazione-esperienza">
+      <div class="about-col-formazione-esperienza">
+        <div class="about-tabs">
+          <button class="about-tab-btn active" data-tab="formazione">Formazione</button>
+          <button class="about-tab-btn" data-tab="esperienza">Esperienza</button>
+          <button class="about-tab-btn" data-tab="interessi">Interessi</button>
+          <button class="about-tab-btn" data-tab="contatti">Contatti</button>
+        </div>
 
-      <div class="about-tabs">
-        <button class="about-tab-btn active" data-tab="formazione">Formazione</button>
-        <button class="about-tab-btn" data-tab="esperienza">Esperienza</button>
-        <button class="about-tab-btn" data-tab="interessi">Interessi</button>
-        <button class="about-tab-btn" data-tab="contatti">Contatti</button>
-      </div>
+        <div class="about-tab-content-card">
+          <div class="about-tab-content" data-tab-content="formazione">
+            <ul>
+              <li>Diploma Liceo Classico</li>
+              <li><b>Laurea triennale in Storia e Tutela dei Beni Artistici</b></li>
+              <li><b>Laurea magistrale in Informatica Umanistica</b></li>
+            </ul>
+          </div>
 
-      <div class="about-tab-content-card">
-        <div class="about-tab-content">
-          <ul>
-            <li>Diploma Liceo Classico</li>
-            <li><b>Laurea triennale in Storia e Tutela dei Beni Artistici</b></li>
-            <li><b>Laurea magistrale in Informatica Umanistica</b></li>
-          </ul>
+          <div class="about-tab-content" data-tab-content="esperienza" style="display:none;">
+            <ul>
+              <li>Progettazione web</li>
+              <li>UX & Interaction Design</li>
+              <li>3D / XR</li>
+            </ul>
+          </div>
+
+          <div class="about-tab-content" data-tab-content="interessi" style="display:none;">
+            Arte, tecnologia, AR/VR e beni culturali.
+          </div>
+
+          <div class="about-tab-content" data-tab-content="contatti" style="display:none;">
+            Pisa, Italia<br>
+            simeoliludovica@gmail.com
+          </div>
         </div>
       </div>
 
+      <div class="about-card-photo">
+        <img src="risorse/profile1.png" alt="Profile" class="about-image" />
+      </div>
+
     </div>
 
-    <div class="about-card-photo">
-      <img src="risorse/profile1.png" class="about-image" />
-    </div>
-
-  </div>
-
-  <footer>
-    &copy; 2025 - Ludovica Simeoli
-  </footer>
-</main>
+    <footer>
+      <p>&copy; 2025 - Ludovica Simeoli</p>
+    </footer>
+  </main>
 
 </body>
-</html>
+</html> 
