@@ -332,12 +332,15 @@ const detailContent = document.getElementById('work-detail-content');
 const closeBtn = document.getElementById('close-detail');
 
 cards.forEach(card => {
-  card.addEventListener('click', () => 
+  card.addEventListener('click', () => {
+
     const label = card.querySelector('.polaroid-label').textContent.trim();
+
     detail.style.display = 'flex';
     detail.scrollIntoView({ behavior: 'smooth', block: 'center' });
-   if (label === 'Siti') {
-  detailContent.innerHTML = `
+
+    if (label === 'Siti') {
+      detailContent.innerHTML =`
   <div class="work-section">
     <h2 class="work-title">Siti Web</h2>
 
@@ -571,38 +574,36 @@ cards.forEach(card => {
 
 const slideshows = detailContent.querySelectorAll('.slideshow-container');
 
-slideshows.forEach(slideshow => {
-  let slideIndex = 0;
-  const slides = slideshow.querySelectorAll('.slide');
-  const prevBtn = slideshow.querySelector('.prev');
-  const nextBtn = slideshow.querySelector('.next');
+    slideshows.forEach(slideshow => {
+      let index = 0;
+      const slides = slideshow.querySelectorAll('.slide');
+      const prev = slideshow.querySelector('.prev');
+      const next = slideshow.querySelector('.next');
 
-  if (slides.length <= 1) return; // niente slideshow se 1 sola immagine
+      if (slides.length <= 1) return;
 
-  function showSlide(index) {
-    slides.forEach((slide, i) => {
-      slide.style.display = i === index ? 'block' : 'none';
+      slides.forEach((s, i) => s.style.display = i === 0 ? 'block' : 'none');
+
+      prev.addEventListener('click', () => {
+        slides[index].style.display = 'none';
+        index = (index - 1 + slides.length) % slides.length;
+        slides[index].style.display = 'block';
+      });
+
+      next.addEventListener('click', () => {
+        slides[index].style.display = 'none';
+        index = (index + 1) % slides.length;
+        slides[index].style.display = 'block';
+      });
     });
-  }
 
-  showSlide(slideIndex);
-
-  prevBtn.addEventListener('click', () => {
-    slideIndex = (slideIndex - 1 + slides.length) % slides.length;
-    showSlide(slideIndex);
-  });
-
-  nextBtn.addEventListener('click', () => {
-    slideIndex = (slideIndex + 1) % slides.length;
-    showSlide(slideIndex);
   });
 });
 
-
 closeBtn.addEventListener('click', () => {
   detail.style.display = 'none';
-  
-  document.querySelector('.polaroid-gallery').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  document.querySelector('.polaroid-gallery')
+    .scrollIntoView({ behavior: 'smooth', block: 'center' });
 });
   </script> 
  
