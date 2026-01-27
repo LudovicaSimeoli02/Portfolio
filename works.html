@@ -74,7 +74,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 2.5rem;
+      gap: 3rem;
       margin-bottom: 2.5rem;
     }
     .polaroid-row {
@@ -84,7 +84,7 @@
       justify-content: center;
     }
     .polaroid-card {
-      background: #EFC7E5; 
+      background: #f4ebef; 
       border-radius: 18px;
       box-shadow: 0 6px 24px rgba(0,0,0,0.13), 0 1.5px 6px rgba(0,0,0,0.08);
       padding: 1.2rem 1.2rem 2.2rem 1.2rem;
@@ -128,11 +128,13 @@
       font-weight: bold;
       text-shadow: 1px 1px 0 #fff, 0 2px 6px #E18AD433;
     }
+    
     .polaroid-centered {
-      justify-content: flex-start !important;
-      margin-left: 420px !important;
-      margin-right: auto !important;
-      width: fit-content;
+      display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 4rem auto 2rem auto; 
+  width: fit-content;
     }
 
     
@@ -176,6 +178,23 @@
 .close-detail-btn:hover {
   background: #F9ADA0;
   color: #D782BA;
+}
+
+    @media (max-width: 768px) {
+  .polaroid-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .polaroid-card {
+    width: 70%;
+    max-width: 250px;
+  }
+
+  .polaroid-img {
+    width: 100%;
+    height: auto;
+  }
 }
 
   </style>
