@@ -189,6 +189,66 @@
   color: #D782BA;
 }
 
+
+    .work-section {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.work-title {
+  font-family: 'Indie Flower', cursive;
+  color: #2C5F2D;
+  font-size: 2.4rem;
+  margin-bottom: 2rem;
+}
+
+.work-subtitle {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.3rem;
+  color: #2C5F2D;
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+}
+
+.work-description {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.05rem;
+  color: #2C5F2D;
+  margin-bottom: 2rem;
+}
+
+.slideshow-container {
+  position: relative;
+  width: 800px;
+  height: 480px;
+  margin: 0 auto 3rem auto;
+}
+
+.slideshow-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2.5rem;
+  background: rgba(0,0,0,0.3);
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+
+.prev { left: -90px; }
+.next { right: -90px; }
+
     
 
     @media (max-width: 768px) {
@@ -273,48 +333,51 @@ cards.forEach(card => {
     detail.scrollIntoView({ behavior: 'smooth', block: 'center' });
    if (label === 'Siti') {
   detailContent.innerHTML = `
-    <div style="text-align: left; margin-left: 2rem; max-width: 900px;">
-      <h2 style="font-family: 'Indie Flower', cursive; color: #2C5F2D; font-size: 2.2rem; margin-bottom: 1.5rem;text-align: center;">Siti Web</h2>
-      
-      <span style="display: block; font-family: 'Quicksand', sans-serif; font-size: 1.2rem; color: #2C5F2D; font-weight: bold; margin-bottom: 0.2rem;">
-        Sito Andrea Palladio Architetto
-      </span>
-      <p style="font-family: 'Quicksand', sans-serif; color: #2C5F2D; font-size: 1.1rem; margin-bottom: 1.5rem;">
-        Sito onepage sulla vita e le opere del Palladio: interazione di video, mappe, pagine esterne e elementi aggiuntivi da scaricare (HTML e CSS)
-      </p>
-      <div class="slideshow-container" style="position: relative; max-width: 500px; height: 350px; margin: 0 auto 2rem auto;">
-        <img class="slide" src="risorse/siti/palladio1.png" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
-        <img class="slide" src="risorse/siti/palladio2.png" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px; display: none;">
-        <img class="slide" src="risorse/siti/palladio3.png" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px; display: none;">
-         <button class="prev" style="position: absolute; top: 50%; left: -60px; transform: translateY(-50%); font-size: 2rem; background: rgba(0,0,0,0.3); color: white; border: none; cursor: pointer; border-radius: 50%; width: 40px; height: 40px;">&#10094;</button>
-        <button class="next" style="position: absolute; top: 50%; right: -60px; transform: translateY(-50%); font-size: 2rem; background: rgba(0,0,0,0.3); color: white; border: none; cursor: pointer; border-radius: 50%; width: 40px; height: 40px;">&#10095;</button>
-      </div>
-       
-      
-      <span style="display: block; font-family: 'Quicksand', sans-serif; font-size: 1.1rem; color: #2C5F2D; font-weight: bold; margin-bottom: 0.2rem;">
-        Sito ditta di spedizione pacchi
-      </span>
-      <p style="font-family: 'Quicksand', sans-serif; color: #2C5F2D; font-size: 1.05rem; margin-bottom: 1.5rem;">
-        Sito multipage - homepage / attività di selezione dimensioni pacco da spedire / form di dati e pagamento (HTML e CSS)
-      </p>
-      
-      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2rem;">
-        <img src='risorse/siti/responsive1.jpeg' alt='Responsive 1' style='height: auto; width: 100%; max-width: 400px; border-radius: 12px 0 0 12px; object-fit: cover;'>
-        <img src='risorse/siti/responsive2.png' alt='Responsive 2' style='height: auto; width: 100%; max-width: 400px; object-fit: cover;'>
-        <img src='risorse/siti/responsive3.jpeg' alt='Responsive 3' style='height: auto; width: 100%; max-width: 400px; border-radius: 0 12px 12px 0; object-fit: cover;'>
+  <div class="work-section">
+    <h2 class="work-title">Siti Web</h2>
+
+    <div>
+      <div class="work-subtitle">Sito Andrea Palladio Architetto</div>
+      <div class="work-description">
+        Sito onepage sulla vita e le opere del Palladio (HTML e CSS)
       </div>
 
-      <span style="display: block; font-family: 'Quicksand', sans-serif; font-size: 1.1rem; color: #2C5F2D; font-weight: bold; margin-bottom: 0.2rem;">
-        Sito ditta spedizione pacchi (altra versione) 
-      </span>
-      <p style="font-family: 'Quicksand', sans-serif; color: #2C5F2D; font-size: 1.05rem; margin-bottom: 1.5rem;">
-       Sito onepage di preventivo personalizzato per spedizione pacchi e creazione di etichetta (HTML, CSS e JavaScript)
-      </p>
-      
-      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2rem;">
-      <img src='risorse/siti/spedizioni.jpeg' alt='Sito spedizioni seconda versione' style='height: auto; width: 100%; max-width: 400px; border-radius: 12px 0 0 12px; object-fit: cover;'>
+      <div class="slideshow-container">
+        <img class="slide" src="risorse/siti/palladio1.png">
+        <img class="slide" src="risorse/siti/palladio2.png" style="display:none;">
+        <img class="slide" src="risorse/siti/palladio3.png" style="display:none;">
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
       </div>
     </div>
+
+     <div>
+      <div class="work-subtitle"> Sito ditta spedizione pacchi</div>
+      <div class="work-description">
+         Sito multipage - homepage / attività di selezione dimensioni pacco da spedire / form di dati e pagamento (HTML e CSS)
+      </div>
+
+      <div class="slideshow-container">
+        <img class="slide" src="risorse/siti/responsive1.jpeg">
+        <img class="slide" src="risorse/siti/responsive2.jpeg" style="display:none;">
+        <img class="slide" src="risorse/siti/responsive3.jpeg" style="display:none;">
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+      </div>
+    </div>
+
+    <div>
+      <div class="work-subtitle">  Sito ditta spedizione pacchi (altra versione) </div>
+      <div class="work-description">
+         Sito onepage di preventivo personalizzato per spedizione pacchi e creazione di etichetta (HTML, CSS e JavaScript)
+      </div>
+
+      <div class="slideshow-container">
+        <img class="slide" src="risorse/siti/spedizioni.jpeg">
+      </div>
+    </div>
+
+  </div>
 
   `;
 } else if (label === 'Elementi 3D') {
