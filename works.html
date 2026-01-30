@@ -355,24 +355,28 @@
   .slideshow-container {
     width: 100%;
     max-width: 100%;
-    height: auto;
-    margin-bottom: 0.5rem;
+    height: 240px;        
+  margin: 1rem auto 1.5rem auto;
+  position: relative;
+  overflow: hidden;
+    
   }
 
+      .slideshow-container img,
   .slideshow-container video {
     width: 100%;
-    height: auto;
-    border-radius: 12px;
-    border: 1px solid #111;
+    height: 100%;
+    object-fit: contain;    
+  background: #fff;
     box-shadow: 0 2px 10px #E18AD433;
   }
 
   /* BOTTONI */
   .work-section div > a {
     font-size: 1rem;
-    padding: 0.5em 1.2em; /* bottone un po' più grande in mobile */
-    margin-left: 0;       /* rimuoviamo spazi eccessivi */
-    margin-top: 0.2rem;   /* vicinissimo al video */
+    padding: 0.5em 1.2em; 
+    margin-left: 0;      
+    margin-top: 0.2rem;   
     display: inline-block;
   }
 
@@ -383,17 +387,17 @@
 
       .slideshow-container .prev,
 .slideshow-container .next {
-  width: 40px;   /* larghezza freccia */
-  height: 40px;  /* altezza freccia */
-  font-size: 1.5rem; /* dimensione simbolo */
+  width: 30px;  
+  height: 30px;  
+  font-size: 1.5ù2rem; 
 }
 
 .slideshow-container .prev {
-  left: -60px;   /* posizione a sinistra */
+  left: 10px;  
 }
 
 .slideshow-container .next {
-  right: -60px;  /* posizione a destra */
+  right: 10px;  
 }
       
 }
