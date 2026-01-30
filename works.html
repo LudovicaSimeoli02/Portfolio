@@ -358,7 +358,7 @@
     height: 240px;        
   margin: 1rem auto 1.5rem auto;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
     
   }
 
@@ -390,14 +390,18 @@
   width: 30px;  
   height: 30px;  
   font-size: 0.9rem;
+  line-height: 30px;
+  cursor: pointer;
+  z-index: 10; 
+  
 }
 
 .slideshow-container .prev {
-  left: -18px;  
+  left: -34px;  
 }
 
 .slideshow-container .next {
-  right: -18px;  
+  right: -34px;  
 }
       
 }
