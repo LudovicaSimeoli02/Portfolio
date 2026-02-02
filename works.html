@@ -336,20 +336,21 @@
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+    /*DESKTOP*/
     @media (min-width: 769px) {
-
-  /* contenitore video con pulsante */
-  #work-detail .work-title:contains("Ambienti virtuali") ~ div .slideshow-container,
-  #work-detail .work-title:contains("Ambienti virtuali") ~ div .video-with-button {
+      .video-with-button {
     width: 100%;
-    max-width: 900px;  /* stesso max-width dei video sezione Video */
+    max-width: 900px; /* come i video della sezione Video */
     margin: 0 auto 2rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
-  #work-detail .work-title:contains("Ambienti virtuali") ~ div .video-with-button video {
+  .video-with-button video {
     width: 100%;
     max-width: 900px;
-    height: auto;          /* mantiene proporzioni */
+    height: auto;
     border-radius: 14px;
     border: 1px solid #111;
     background: #fff;
@@ -358,15 +359,15 @@
     margin: 0 auto;
   }
 
-  #work-detail .work-title:contains("Ambienti virtuali") ~ div .video-button-wrapper {
+  .video-button-wrapper {
     width: 100%;
     max-width: 900px;
     margin: 0.5rem auto 2rem auto;
     display: flex;
-    justify-content: flex-start;  /* pulsante sotto il video, allineato a sinistra */
+    justify-content: flex-start; /* pulsante sotto il video, a sinistra */
   }
 
-  #work-detail .work-title:contains("Ambienti virtuali") ~ div .video-button-wrapper a {
+  .video-button-wrapper a {
     font-size: 1rem;
     padding: 0.65em 1.4em;
     border-radius: 999px;
@@ -377,6 +378,8 @@
     text-decoration: none;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
+
+
 }
     
     
