@@ -362,9 +362,12 @@
   .video-button-wrapper {
     width: 100%;
     max-width: 900px;
-    margin: 0.5rem auto 2rem auto;
+    margin-bottom: 3rem;
     display: flex;
-    justify-content: flex-start; /* pulsante sotto il video, a sinistra */
+    justify-content: flex-start; 
+  }
+      .video-with-button + .video-with-button .video-button-wrapper {
+    margin-top: 2rem; 
   }
 
   .video-button-wrapper a {
