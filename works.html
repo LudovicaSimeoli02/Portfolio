@@ -270,20 +270,22 @@
   justify-content: flex-start;
 }
 
-/* bottone */
-.video-button {
-  display: inline-block;
-  background: linear-gradient(90deg, #F9D6EC 60%, #EFC7E5 100%);
+
+    .video-button {
+    display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: linear-gradient(135deg, #FADADD, #EFC7E5);
   color: #2C5F2D;
-  font-weight: bold;
-  padding: 0.6em 1.5em;
-  border-radius: 7px;
-  font-size: 1.15rem;
+  font-weight: 700;
+  padding: 0.65em 1.4em;
+  border-radius: 999px;   /* pill button */
+  font-size: 1rem;
   text-decoration: none;
-  box-shadow: 0 2px 8px #E18AD433;
-  border: 2px solid #EFC7E5;
-  transition: background 0.2s;
-}
+  box-shadow: 0 6px 18px rgba(225, 138, 212, 0.35);
+  border: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
 
     
     
@@ -384,12 +386,18 @@
   .slideshow-container {
     width: 100%;
     max-width: 100%;
-    height: 320px;        
-  margin: 1rem auto 1.5rem auto;
-  position: relative;
-  overflow: visible;
+    height: auto;          
+    aspect-ratio: 16 / 9; 
+    margin: 1rem auto 0.4rem auto;
     
   }
+
+      .slideshow-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+      
 
       .work-title:contains("Ambienti virtuali") ~ div .slideshow-container + div {
     margin-top: -0.6rem !important;
@@ -413,7 +421,7 @@
     display: inline-block;
   }
 
-  /* Spaziatura tra blocchi di contenuto */
+
   .work-section > div {
     margin-bottom: 2rem; 
   }
@@ -438,20 +446,32 @@
 }
 
       .video-with-button {
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;  
-    gap: 0.5rem;
+    
   }
 
   .video-button-wrapper {
     width: auto;
-    margin: 0;
+    margin: 0.4 rem;
+    display: flex;
     justify-content: center;
   }
 
   .video-button {
-    font-size: 0.9rem;
-    padding: 0.4em 0.8em;
+    display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: linear-gradient(135deg, #FADADD, #EFC7E5);
+  color: #2C5F2D;
+  font-weight: 700;
+  padding: 0.65em 1.4em;
+  border-radius: 999px;   /* pill button */
+  font-size: 1rem;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(225, 138, 212, 0.35);
+  border: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
       
 }
@@ -705,7 +725,7 @@ cards.forEach(card => {
       </div>
 
       <div class="slideshow-container video-with-button">
-        <video controls style='width: 100%; max-width: 900px; height: auto; display: block; border-radius: 14px; border: 1px solid #111; background: #fff; box-shadow: 0 2px 12px #E18AD433;'>
+        <video controls >
               <source src='risorse/Video_Nitido.mp4' type='video/mp4'>
               Il tuo browser non supporta il tag video.
             </video>
@@ -724,7 +744,7 @@ cards.forEach(card => {
       
 
       <div class="slideshow-container video-with-button">
-       <video controls style='width: 100%; max-width: 900px; height: auto; display: block; border-radius: 14px; border: 1px solid #111; background: #fff; box-shadow: 0 2px 12px #E18AD433;'>
+       <video controls>
               <source src='risorse/video_AV.mp4' type='video/mp4'>
               Il tuo browser non supporta il tag video.
             </video>
