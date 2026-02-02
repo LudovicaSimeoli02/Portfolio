@@ -336,7 +336,48 @@
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-    
+    @media (min-width: 769px) {
+
+  /* contenitore video con pulsante */
+  #work-detail .work-title:contains("Ambienti virtuali") ~ div .slideshow-container,
+  #work-detail .work-title:contains("Ambienti virtuali") ~ div .video-with-button {
+    width: 100%;
+    max-width: 900px;  /* stesso max-width dei video sezione Video */
+    margin: 0 auto 2rem auto;
+  }
+
+  #work-detail .work-title:contains("Ambienti virtuali") ~ div .video-with-button video {
+    width: 100%;
+    max-width: 900px;
+    height: auto;          /* mantiene proporzioni */
+    border-radius: 14px;
+    border: 1px solid #111;
+    background: #fff;
+    box-shadow: 0 2px 12px #E18AD433;
+    display: block;
+    margin: 0 auto;
+  }
+
+  #work-detail .work-title:contains("Ambienti virtuali") ~ div .video-button-wrapper {
+    width: 100%;
+    max-width: 900px;
+    margin: 0.5rem auto 2rem auto;
+    display: flex;
+    justify-content: flex-start;  /* pulsante sotto il video, allineato a sinistra */
+  }
+
+  #work-detail .work-title:contains("Ambienti virtuali") ~ div .video-button-wrapper a {
+    font-size: 1rem;
+    padding: 0.65em 1.4em;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #FADADD, #EFC7E5);
+    color: #2C5F2D;
+    font-weight: 700;
+    box-shadow: 0 6px 18px rgba(225, 138, 212, 0.35);
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+}
     
     
  /* Mobile*/
