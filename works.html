@@ -384,11 +384,10 @@
 .video-with-button + .video-with-button {
     margin-top: 4rem;
 }
-
-      .work-subtitle:contains("Videogioco ambientato nello spazio") {
-    margin-top: 3rem; 
-    display: block;   
+ .video-space-game {
+    margin-top: 4rem; /* distanza dal video precedente */
   }
+      
 
 }
     
@@ -857,7 +856,7 @@ cards.forEach(card => {
 </div>
     </div>
 
-     <div>
+     <div class="slideshow-container video-with-button video-space-game">
       <div class="work-subtitle"> Videogioco ambientato nello spazio </div>
       <div class="work-description">
       Videogioco interattivo realizzato con Unity: ti trovi nello spazio, a bordo di una navicella che interagirà con pianeti e meteoriti. Scarica ed esegui il file per provare l'esperienza immersiva.
