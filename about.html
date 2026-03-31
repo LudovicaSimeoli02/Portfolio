@@ -136,23 +136,22 @@ nav a.active::after {
 
     
     .about-tab-content-card {
-     display: flex;
-  flex-direction: column; 
-  width: 100%;            
-  max-width: 700px;      
-  background: #f4ebef;
-  padding: 1.6rem;
-  border-radius: 22px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-  text-align: left;
-  overflow-y: auto;
+    width: 700px;             
+      background: #f4ebef;
+      padding: 1.6rem;
+      border-radius: 22px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      text-align: left;
+      flex-shrink: 0;
+      display: flex;
+
     }
 
     .about-tab-content {
-   width: 100%;
-  font-size: 1.25rem;
-  line-height: 1.7;
-  list-style: disc inside;
+    width: 100%;
+      font-size: 1.25rem;
+      line-height: 1.7;
+      overflow-y: auto;
     }
 
     .about-tab-content ul {
